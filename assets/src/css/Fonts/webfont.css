@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'Noto Serif JP', serif;
+    src: url('./webfont/NotoSerifJP-Black.woff') format('woff'),
+        url('./webfont/NotoSerifJP-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Serif JP', serif;
+    src: url('./webfont/assets/NotoSerifJP-Bold.woff') format('woff'),
+        url('./webfont/NotoSerifJP-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Serif JP', serif;
+    src: url('./webfont/NotoSerifJP-SemiBold.woff') format('woff'),
+        url('./webfont/NotoSerifJP-SemiBold.woff2') format('woff2');
+    font-weight:  600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Serif JP', serif;
+    src: url('./webfont/NotoSerifJP-Medium.woff') format('woff'),
+        url('./webfont/NotoSerifJP-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Serif JP', serif;
+    src: url('./webfont/NotoSerifJP-Regular.woff') format('woff'),
+        url('./webfont/NotoSerifJP-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Serif JP', serif;
+    src: url('./webfont/NotoSerifJP-Light.woff') format('woff'),
+        url('./webfont/NotoSerifJP-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Serif JP', serif;
+    src: url('./webfont/NotoSerifJP-ExtraLight.woff') format('woff'),
+        url('./webfont/NotoSerifJP-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond', serif;
+    src: url('./webfont/CormorantGaramond-Bold.woff') format('woff'),
+        url('./webfont/CormorantGaramond-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond', serif;
+    src: url('./webfont/CormorantGaramond-SemiBold.woff') format('woff'),
+        url('./webfont/CormorantGaramond-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond', serif;
+    src: url('./webfont/CormorantGaramond-Medium.woff') format('woff'),
+        url('./webfont/CormorantGaramond-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond', serif;
+    src: url('./webfont/CormorantGaramond-Regular.woff') format('woff'),
+        url('./webfont/CormorantGaramond-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond', serif;
+    src: url('./webfont/CormorantGaramond-Light.woff') format('woff'),
+        url('./webfont/CormorantGaramond-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
