@@ -1,0 +1,57 @@
+{
+    "name": "awesome-cosme",
+    "version": "1.0.0",
+    "description": "-AWESOME COSME- Fictitious Brand HomePage",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/street-m3/awesome-cosme.git"
+    },
+    "keywords": [
+        "homepage",
+        "javascript",
+        "lit",
+        "Web components"
+    ],
+    "author": "Junichi Takabatake",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/street-m3/awesome-cosme/issues"
+    },
+    "homepage": "https://github.com/street-m3/awesome-cosme#readme",
+    "dependencies": {
+        "lit": "^2.2.5"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.17.10",
+        "@babel/core": "^7.17.10",
+        "@babel/preset-env": "^7.17.10",
+        "browser-sync": "^2.27.9",
+        "cpx": "^1.5.0",
+        "cssnano": "^5.1.7",
+        "mkdirp": "^1.0.4",
+        "npm-run-all": "^4.1.5",
+        "onchange": "^7.1.0",
+        "postcss": "^8.4.13",
+        "postcss-calc": "^8.2.4",
+        "postcss-cli": "^9.1.0",
+        "postcss-extend-rule": "^4.0.0",
+        "postcss-import": "^14.1.0",
+        "postcss-import-ext-glob": "^2.0.1",
+        "postcss-mixins": "^9.0.2",
+        "postcss-nested": "^5.0.6",
+        "postcss-preset-env": "^6.7.0",
+        "postcss-pxtorem": "^6.0.0",
+        "postcss-reporter": "^7.0.5",
+        "postcss-simple-vars": "^6.0.3",
+        "postcss-sort-media-queries": "^4.2.1",
+        "postcss-sorting": "^7.0.1",
+        "rimraf": "^3.0.2",
+        "sharp-cli": "^1.15.0",
+        "watch": "^1.0.2",
+        "webpack": "^5.72.0",
+        "webpack-cli": "^4.9.2"
+    }
+}
