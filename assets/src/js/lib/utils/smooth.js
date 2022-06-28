@@ -1,4 +1,3 @@
-'use strict';
 /**
  * 
  * @param {Object} position ターゲットとなるDOMを設定する
@@ -35,12 +34,12 @@ function easeInOutCubic(t, b, c, d) {
  * @returns 
  */
 
-function fixedHeaderResolveScroll(e, clientX) {
+function fixedHeaderResolveScroll(e) {
     const currentLinkHandler = e.currentTarget.getAttribute('href') == "#" ? "header" : e.currentTarget.getAttribute("href");
     const id = currentLinkHandler.substr(currentLinkHandler.indexOf('#'));
     const section = document.querySelector(id);
     if (!section) return console.warn('[fixedHeaderResolveScroll] ターゲットのリンクが正しく設定されていないか存在しません。');
-    return smoothScroll(section.offsetTop - clientX);
+    return smoothScroll(section.offsetTop);
 }
 
 export { fixedHeaderResolveScroll, smoothScroll };

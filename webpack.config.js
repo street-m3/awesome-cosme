@@ -1,7 +1,8 @@
-const developmentMode = 'development'
+const dev = 'development';
+const pro = 'production';
 
 const main = {
-    mode: developmentMode,
+    mode: pro,
     entry: `./assets/src/js/index.js`,
 
     output: {

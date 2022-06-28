@@ -3,7 +3,27 @@
     "version": "1.0.0",
     "description": "-AWESOME COSME- Fictitious Brand HomePage",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "clean:fontcss": "rimraf ./assets/dist/Fonts/ && mkdirp ./assets/dist/Fonts/",
+        "clean:js": "rimraf ./assets/dist/js/ && mkdirp ./assets/dist/js/",
+        "clean:images": "rimraf ./assets/dist/images/ && mkdirp ./assets/dist/images/",
+        "dev:html:cpx": "cpx './assets/src/*.html' './assets/dist/' && cpx './assets/src/pages/**/*.html' './assets/dist/'",
+        "build:html": "npm-run-all dev:html:*",
+        "dev:css:postcss": "postcss -c ./postcss.config.js ./assets/src/css/style.pcss -o ./assets/dist/css/style.css",
+        "dev:css:fontcss": "cpx './assets/src/css/Fonts/*' './assets/dist/css/Fonts/'",
+        "build:css": "npm-run-all -s dev:css:*",
+        "build:js": "npm run clean:js && webpack",
+        "dev:images:cpx": "cpx './assets/src/images/*.{gif,svg,webp,mp4,ico}' './assets/dist/images/'",
+        "sharp-webp": "sharp -i './assets/src/images/*.jpg' './assets/src/images/**/*.png' -f webp -o './assets/dist/images/'",
+        "sharp-jpg": "sharp -i './assets/src/images/*.jpg' -o './assets/dist/images/'",
+        "sharp-png": "sharp -i './assets/src/images/*.png' -o './assets/dist/images/'",
+        "dev:z:sharp": "npm run sharp-webp & npm run sharp-png & npm run sharp-jpg",
+        "build:images": "npm run clean:images && npm-run-all -s dev:images:*",
+        "watch:server": "browser-sync start --config \"./bs-config.js\"",
+        "watch:html": "watch 'npm run build:html' ./assets/src/",
+        "watch:css": "watch 'npm run build:css' ./assets/src/css/",
+        "watch:scripts": "watch 'npm run build:js' ./assets/src/js/",
+        "watch:images": "onchange './assets/src/images/' -e '**/*.DS_Store' -- npm run build:images",
+        "watch": "npm-run-all -p watch:*"
     },
     "repository": {
         "type": "git",
@@ -11,7 +31,6 @@
     },
     "keywords": [
         "homepage",
-        "javascript",
         "lit",
         "Web components"
     ],
@@ -31,6 +50,7 @@
         "browser-sync": "^2.27.9",
         "cpx": "^1.5.0",
         "cssnano": "^5.1.7",
+        "lit-element-router": "^2.0.3",
         "mkdirp": "^1.0.4",
         "npm-run-all": "^4.1.5",
         "onchange": "^7.1.0",

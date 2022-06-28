@@ -1,5 +1,3 @@
-'use strict';
-
 import { backfaceFixed } from '../utils/backfaceFixed';
 // export class Modal {
 //     constructor(eventTarget) {

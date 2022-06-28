@@ -1,4 +1,3 @@
-'use strict';
 const backfaceFixed = (fixed) => {
     /**
      * 表示されているスクロールバーとの差分を計測し、背面固定時はその差分body要素に余白を生成する

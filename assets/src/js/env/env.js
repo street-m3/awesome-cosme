@@ -1,5 +1,3 @@
-'use strict';
-
 const urlFullPath = location.href.split(/#/)[0];
 const urlShortPath = urlFullPath.substring(0, urlFullPath.lastIndexOf("/"));
 const urlImagePath = `${urlShortPath}/images/`;

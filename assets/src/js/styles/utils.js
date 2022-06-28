@@ -1,93 +1,93 @@
-'use strict';
+import { css } from 'lit';
 
-const Utils = () => {
-    return css`
-    .u-content-area.-top {
-        padding-top: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);
-    }
+export default css`
+.u-hidden {
+    display: none;
+}
 
-    .u-content-area.-bottom {
-        padding-bottom: 100px;
-    }
+.u-content-area.-top {
+    padding-top: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);
+}
 
-    .u-title-ellipsis {
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-    }
+.u-content-area.-bottom {
+    padding-bottom: 100px;
+}
 
-    .u-flex {
-        display: flex;
-    }
+.u-title-ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
 
-    .u-flex-wrap {
-        flex-wrap: wrap;
-    }
+.u-flex {
+    display: flex;
+}
 
-    .u-flex-bet {
-        justify-content: space-between;
-    }
+.u-flex-wrap {
+    flex-wrap: wrap;
+}
 
-    .u-flex-content-center {
-        align-items: center;
-    }
+.u-flex-bet {
+    justify-content: space-between;
+}
 
-    .u-flex-justify-center {
-        justify-content: center;
-    }
+.u-flex-content-center {
+    align-items: center;
+}
 
-    .u-flex-row {
-        flex-direction: row;
-    }
+.u-flex-justify-center {
+    justify-content: center;
+}
 
-    .u-flex-column {
-        flex-direction: column;
-    }
+.u-flex-row {
+    flex-direction: row;
+}
 
-    .u-flex-none {
-        display: block !important;
-    }
+.u-flex-column {
+    flex-direction: column;
+}
 
-    .u-visual-hidden {
-        clip: rect(0 0 0 0);
-        clip-path: inset(50%);
-        height: 1px;
-        margin: -1px;
-        overflow: hidden;
-        position: absolute;
-        white-space: nowrap;
-        width: 1px;
-    }
+.u-flex-none {
+    display: block !important;
+}
 
-    .u-under-line {
-        border-bottom: 1px solid currentColor;
-    }
+.u-visual-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
 
-    .u-uppercase {
-        text-transform: uppercase;
-    }
+.u-under-line {
+    border-bottom: 1px solid currentColor;
+}
 
-    .u-capitalize {
-        text-transform: capitalize;
-    }
+.u-uppercase {
+    text-transform: uppercase;
+}
 
+.u-capitalize {
+    text-transform: capitalize;
+}
+
+.u-brsp {
+    display: inline-block;
+}
+
+.u-brpc {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
     .u-brsp {
-        display: inline-block;
-    }
-
-    .u-brpc {
         display: none;
     }
 
-    @media screen and (min-width: 768px) {
-        .u-brsp {
-            display: none;
-        }
-
-        .u-brpc {
-            display: inline-block;
-        }
-    }`
-};
-
-export default { Utils };
+    .u-brpc {
+        display: inline-block;
+    }
+}`

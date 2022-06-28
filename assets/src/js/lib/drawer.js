@@ -1,6 +1,5 @@
-'use strict';
-import { fixedHeaderResolveScroll } from '../utils/smooth';
-import { backfaceFixed } from '../utils/backfaceFixed';
+import { fixedHeaderResolveScroll } from './utils/smooth';
+import { backfaceFixed } from './utils/backfaceFixed';
 
 export const ResponsiveHandler = (header, breakpoints) => {
     const responsive = window.matchMedia(`(min-width:${breakpoints}px)`).matches;
@@ -15,7 +14,15 @@ export const ResponsiveHandler = (header, breakpoints) => {
 }
 
 export class Drawer {
-    constructor(root, closed, header, options) {
+    
+    /**
+     * 
+     * @param {object} root 
+     * @param {boolean} closed 
+     * @param {object} options 
+     * @returns 
+     */
+    constructor(root, closed, options) {
         this.root = root;
         if (!this.root) return;
 
@@ -29,7 +36,6 @@ export class Drawer {
         };
 
         this.options = Object.assign(defaultOptions, options);
-
 
         /**
          * * @type {object} focusvisible ドロワー開閉を識別するdata属性
@@ -47,7 +53,6 @@ export class Drawer {
         this.navDrawer = this.root.querySelector(`.${this.options.navDrawer}`);
         this.locations = this.navDrawer.querySelectorAll(`${this.options.locations}`);
         this.closed = closed;
-        this.header = header;
         // private this.group
         this.group = this.root.querySelectorAll(`.${this.options.group}`);
         this.touchEventListener = this._touchEventListener();
@@ -108,7 +113,7 @@ export class Drawer {
         if (this.closed) {
             this.locations.forEach((element) => {
                 element.addEventListener(this.touchEventListener, (e) => {
-                    fixedHeaderResolveScroll(e, this.header);
+                    fixedHeaderResolveScroll(e);
                     this.button.click();
                 });
             });
@@ -120,7 +125,7 @@ export class Drawer {
         Array.prototype.forEach.call(this.group, element => {
             isExpanded ? setTimeout(() => {
                 element.classList.add('is-show');
-            }, 500) : element.classList.remove('is-show');;
+            }, 500) : element.classList.remove('is-show');
         });
     }
 

@@ -1,0 +1,114 @@
+.anim-fadein {
+    --duration: 0.8s;
+    --timing-function: ease;
+    transition: opacity var(--duration) var(--timing-function), visibility var(--duration) var(--timing-function);
+}
+
+.anim-fadein[data-animate="false"] {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.anim-fadein[data-animate="true"] {
+    opacity: 1;
+    visibility: visible;
+}
+
+.anim-fadein:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.anim-fadein:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.anim-fadein:nth-child(3) {
+    transition-delay: 0.25s;
+}
+
+.anim-fadein:nth-child(4) {
+    transition-delay: 0.35s;
+}
+
+.anim-fadein:nth-child(5) {
+    transition-delay: 0.45s;
+}
+
+.anim-fadein:nth-child(6) {
+    transition-delay: 0.55s;
+}
+
+.anim-fadein:nth-child(7) {
+    transition-delay: 0.65s;
+}
+
+.anim-fadein:nth-child(8) {
+    transition-delay: 0.75s;
+}
+
+.anim-fadein:nth-child(9) {
+    transition-delay: 0.85s;
+}
+
+.anim-fadein:nth-child(10) {
+    transition-delay: 0.95s;
+}
+
+.anim-fadein-up {
+    --duration: 0.8s;
+    --timing-function: ease;
+    --starting-position: 30px;
+    transition: opacity var(--duration) var(--timing-function), transform var(--duration) var(--timing-function), visibility var(--duration) var(--timing-function);
+}
+
+.anim-fadein-up[data-animate="false"] {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(var(--starting-position));
+}
+
+.anim-fadein-up[data-animate="true"] {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.anim-fadein-up:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.anim-fadein-up:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.anim-fadein-up:nth-child(3) {
+    transition-delay: 0.25s;
+}
+
+.anim-fadein-up:nth-child(4) {
+    transition-delay: 0.35s;
+}
+
+.anim-fadein-up:nth-child(5) {
+    transition-delay: 0.45s;
+}
+
+.anim-fadein-up:nth-child(6) {
+    transition-delay: 0.55s;
+}
+
+.anim-fadein-up:nth-child(7) {
+    transition-delay: 0.65s;
+}
+
+.anim-fadein-up:nth-child(8) {
+    transition-delay: 0.75s;
+}
+
+.anim-fadein-up:nth-child(9) {
+    transition-delay: 0.85s;
+}
+
+.anim-fadein-up:nth-child(10) {
+    transition-delay: 0.95s;
+}
