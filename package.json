@@ -16,7 +16,7 @@
         "sharp-webp": "sharp -i './assets/src/images/*.jpg' './assets/src/images/**/*.png' -f webp -o './assets/dist/images/'",
         "sharp-jpg": "sharp -i './assets/src/images/*.jpg' -o './assets/dist/images/'",
         "sharp-png": "sharp -i './assets/src/images/*.png' -o './assets/dist/images/'",
-        "dev:z:sharp": "npm run sharp-webp & npm run sharp-png & npm run sharp-jpg",
+        "dev:images:sharp": "npm run sharp-webp & npm run sharp-png & npm run sharp-jpg",
         "build:images": "npm run clean:images && npm-run-all -s dev:images:*",
         "watch:server": "browser-sync start --config \"./bs-config.js\"",
         "watch:html": "watch 'npm run build:html' ./assets/src/",
