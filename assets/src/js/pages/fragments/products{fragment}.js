@@ -136,7 +136,7 @@ export class Products extends LitElement {
                     </div>
                     <ul class="fragment--Products-List m-price-modules c-headline-number">
                         <li class="fragment--Products-List-Item o-card" data-stream="false">
-                            <span data-recent="true" class="u-uppercase">New</span>
+                            <!-- <span data-recent="true" class="u-uppercase">New</span> -->
                             <figure class="fragment--Products-List-Item-Image o-card-image">
                                 <img src="./images/product-01-sp@1x.jpg" alt="プロダクト1">
                             </figure>
@@ -154,7 +154,7 @@ export class Products extends LitElement {
                             </div>
                         </li>
                         <li class="fragment--Products-List-Item o-card" data-stream="true">
-                        <span data-recent="true" class="u-uppercase">New</span>
+                        <!-- <span data-recent="true" class="u-uppercase">New</span> -->
                             <figure class="fragment--Products-List-Item-Image o-card-image">
                                 <img src="./images/product-02@1x.jpg" alt="プロダクト2">
                             </figure>
