@@ -1,7 +1,9 @@
 import { LitElement, html, css } from 'lit';
-import { presets } from '../env/env';
 import reset from '../styles/reset';
 import container from '../styles/container';
+import headline from '../styles/headline';
+import typography from '../styles/typography';
+import utils from '../styles/utils';
 
 const tagName = 'pages-company';
 
@@ -10,6 +12,10 @@ export class Company extends LitElement {
         return [
             reset, 
             container, 
+            headline,
+            typography,
+            utils,
+            css``
         ]
     }
 
@@ -19,7 +25,15 @@ export class Company extends LitElement {
 
     render() {
         return html`
-        <h1>テスト カンパニーページ</h1>
+        <section class="pages-Singular-ComponentBlock" style="padding: clamp(100px, 6.25rem + (1vw - 4.14px) * 5.2521, 150px) 0;">
+            <div class="ly-Inner_Grid -lg">
+                <div class="c-headline-lv6 u-uppercase">Company</div>
+                <h2 class="c-headline-lv2" style="margin-top: 40px; margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);">企業情報</h2>
+                <div class="pages-Singular-Component_Content o-userWriting-Area">
+                    <p>現在調整中のページです。</p>
+                </div>
+            </div>
+        </section>
         `;
     }
 }
