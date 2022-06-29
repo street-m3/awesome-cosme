@@ -55,9 +55,10 @@ export class Products extends LitElement {
                 border-radius: 50%;
                 position: absolute;
                 top: calc(var(--sp) - calc(var(--sp) * 1.5));
-                left: calc(var(--sp) - calc(var(--sp) * 1.5));
+                right: calc(var(--sp) - calc(var(--sp) * 1.5));
                 color: var(--color-text-primary);
                 font-size: 18px;
+                pointer-events: none;
                 z-index: 5;
             }
 
@@ -66,7 +67,7 @@ export class Products extends LitElement {
                     width: var(--pc);
                     height: var(--pc);
                     top: calc(var(--pc) - calc(var(--pc) * 1.5));
-                    left: calc(var(--pc) - calc(var(--pc) * 1.5));
+                    right: calc(var(--pc) - calc(var(--pc) * 1.5));
                 }
             }
 
