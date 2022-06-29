@@ -1,7 +1,7 @@
 # AWESOME COSME
 
 ## Stack
-HTML(astro)
+HTML (Living Standard)
 PostCSS
 JavaScript (Create Ui-Components by Lit)
 
