@@ -54,8 +54,7 @@ export class Proposal extends LitElement {
             .fragment--Products-Proposal_PicturePanel-Container a {
                 position: relative;
                 width: 180px;
-                text-align: center;
-                font-family: var(--font-serif-en);
+                font-family: var(--font-serif-ja);
                 padding: 13px 0;
                 border-radius: 130px;
                 border: 2px solid var(--color-text-primary);
@@ -64,26 +63,6 @@ export class Proposal extends LitElement {
                 line-height: 1;
                 margin-top: clamp(41px, 9vw, 81px);
                 margin-left: auto;
-            }
-
-            .fragment--Products-Proposal_PicturePanel-Container a::after {
-                display: inline-flex;
-                justify-content: center;
-                align-items: center;
-                content: "";
-                width: clamp(30px, 2vw, 45px);
-                border-bottom: 1px solid var(--color-text-primary);
-                border-right: 2px solid var(--color-text-primary);
-                height: 5px;
-                position: absolute;
-                top: 50%;
-                right: 1.5em;
-                transform: translateY(-50%) skew(45deg) translateX(0);
-            }
-
-            .fragment--Products-Proposal_PicturePanel-Container a:hover::after {
-                transition: 0.3s ease 0s;
-                transform: translateY(-50%) skew(45deg) translateX(calc(0.5em));
             }
 
             @media screen and (min-width: 768px) {
@@ -105,6 +84,14 @@ export class Proposal extends LitElement {
                     grid-template-columns: repeat(2, 1fr);
                 }
             }
+
+            @media (hover: hover) {
+                .fragment--Products-Proposal_PicturePanel-Container a:hover {
+                    background-color: var(--color-text-primary);
+                    color: var(--color-white);
+                    transition: background-color 0.4s ease-out 0s;
+                }
+            }
             `
         ]
     }
@@ -112,31 +99,39 @@ export class Proposal extends LitElement {
     render() {
         return html`
         <section class="fragment--Products-Proposal">
-        <div class="ly-Inner_Grid -lg"> 
-            <div class="fragment--Products-Proposal_PicturePanel">
-                <figure class="fragment--Products-Proposal_Pictures">
-                    <picture>
-                        <source media="(min-width: 992px)" srcset="../images/gift-pc@1x.jpg" type="image/jpg">
-                        <source media="(min-width: 1200px)" srcset="../images/gift-pc@2x.jpg" type="image/jpg">
-                        <source srcset="../images/gift-sp@2x.jpg" type="image/jpg">
-                        <img src="../images/gift-sp@1x.jpg" alt="ギフトセット画像">
-                    </picture>
-                </figure>
-            </div>
-            <div class="fragment--Products-Proposal_PicturePanel-Details">
-                <h2 class="c-headline-lv6">GIFT</h2>
-                <div class="fragment--Products-Proposal_PicturePanel-Container">
-                    <div class="c-headline-lv2">大切な人への<br>贈り物に。</div>
-                    <div class="fragment--Products-Proposal_PicturePanel-Box">
-                        <p class="o-Typography-Landing">
-                            AWESOME 公式ショップがリコメンドする、ギフトセット。<wbr>大切な方へ、お世話になった方へ、自分へのプレゼントに、ホリスティックな心地よさをおたのしみください。
-                        </p>
-                        <a href="/404" class="u-uppercase u-flex u-flex-content-center u-flex-justify-center" data-content-anchor="true">More</a>
+            <div class="ly-Inner_Grid -lg"> 
+                <div class="fragment--Products-Proposal_PicturePanel">
+                    <figure class="fragment--Products-Proposal_Pictures">
+                        <picture>
+                            <source media="(min-width: 992px)" srcset="../images/gift-pc@1x.jpg" type="image/jpg">
+                            <source media="(min-width: 1200px)" srcset="../images/gift-pc@2x.jpg" type="image/jpg">
+                            <source srcset="../images/gift-sp@2x.jpg" type="image/jpg">
+                            <img src="../images/gift-sp@1x.jpg" alt="ギフトセット画像">
+                        </picture>
+                    </figure>
+                </div>
+                <div class="fragment--Products-Proposal_PicturePanel-Details">
+                    <h2 class="c-headline-lv6">GIFT</h2>
+                    <div class="fragment--Products-Proposal_PicturePanel-Container">
+                        <div class="c-headline-lv2">大切な人への<br>贈り物に。</div>
+                        <div class="fragment--Products-Proposal_PicturePanel-Box">
+                            <p class="o-Typography-Landing">
+                                AWESOME 公式ショップがリコメンドする、ギフトセット。<wbr>大切な方へ、お世話になった方へ、自分へのプレゼントに、ホリスティックな心地よさをおたのしみください。
+                            </p>
+                            <a href="/404" class="u-uppercase u-flex u-flex-content-center u-flex-justify-center">
+                                <span style="margin-right: 24px;">More</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="6" viewBox="0 0 45 6">
+                                    <g id="グループ_10175" data-name="グループ 10175" transform="translate(1983.641 -1474)">
+                                        <line id="線_138" data-name="線 138" x2="30" transform="translate(-1983.641 1479.5)" stroke-width="1" style="fill: none; stroke: currentColor;" />
+                                        <path id="パス_53" data-name="パス 53" d="M0,2.93l15,6H0Z" transform="translate(-1953.641 1471.07)" style="fill: currentColor;" />
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>`;
+        </section>`;
     }
 }
 
