@@ -25,7 +25,7 @@ export class Accordion {
                 } else {
                     panelItembody.style.maxHeight = 0;
                 }
-            });
+            }, {passive: false });
         });
     }
 

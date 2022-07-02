@@ -60,18 +60,17 @@ export class Drawer {
     }
 
     init() {
-        this._event(this.button, this.touchEventListener);
-        this._event(this.screenScope, this.touchEventListener);
+        this._event(this.button);
+        this._event(this.screenScope);
         this._AutomaticOperation();
     }
 
     /**
      * 
      * @param {object} elements trigger Objects
-     * @param {string} handler click or touchstart
      */
-    _event(elements, handler) {
-        elements.addEventListener(handler, (e) => {
+    _event(elements) {
+        elements.addEventListener(this.touchEventListener, (e) => {
             e.preventDefault();
             this._open();
             this._focusState();
@@ -115,7 +114,7 @@ export class Drawer {
                 element.addEventListener(this.touchEventListener, (e) => {
                     fixedHeaderResolveScroll(e);
                     this.button.click();
-                });
+                }, { passive: true });
             });
         }
     }
