@@ -67,7 +67,9 @@ export class Header extends LitElement {
             <div class="s-Header_Inner">
                 <h1 class="s-Header_Brand">
                     <div class="s-Header_Brand-Title">
-                        ${this.props.siteName}
+                        <a href="/" style="display: block;">
+                            ${this.props.siteName}
+                        </a>
                     </div>
                 </h1>
                 <site-drawer-component ${ref(this.drawerRef)}></site-drawer-component>
