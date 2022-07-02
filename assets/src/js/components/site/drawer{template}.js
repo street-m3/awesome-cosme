@@ -191,8 +191,52 @@ export class DrawerMaterial extends LitElement {
         ]
     }
 
+    static get properties() {
+        return {
+            route: { type: Array }
+        }
+    }
+
     constructor() {
         super();
+        this.route = [
+            {
+                id: `${presets.prefix}01`,
+                title: {
+                    en: 'About',
+                    ja: '私たちについて',
+                },
+            },
+            {
+                id: `${presets.prefix}02`,
+                title: {
+                    en: 'Product',
+                    ja: '商品',
+                },
+            },
+            {
+                id: `${presets.prefix}03`,
+                title: {
+                    en: 'Blog',
+                    ja: 'ブログ',
+                },
+            },
+            {
+                id: `${presets.prefix}04`,
+                title: {
+                    en: 'Access',
+                    ja: 'アクセス',
+                },
+            },
+            {
+                id: `${presets.prefix}05`,
+                title: {
+                    en: 'Faq',
+                    ja: 'よくあるご質問',
+                },
+            },
+        ];
+        
         this.props = {
             ariaControls: 'site-Drawer-nav',
         }
@@ -224,46 +268,16 @@ export class DrawerMaterial extends LitElement {
         <nav role="navigation" id="${this.props.ariaControls}" class="s-Drawer_nav" aria-hidden="true">
             <div class="s-Drawer_navInner">
                 <ul class="s-Drawer_navList">
-                    <li class="s-Drawer_navList-Item">
-                        <a href="${presets.prefix}01" class="s-Drawer_navLink">
-                            <div class="s-Drawer_navLink-Group">
-                                <span lang="en">About</span>
-                                <span lang="ja">私たちについて</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="s-Drawer_navList-Item">
-                        <a href="${presets.prefix}02" class="s-Drawer_navLink">
-                            <div class="s-Drawer_navLink-Group">
-                                <span lang="en">Product</span>
-                                <span lang="ja">商品</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="s-Drawer_navList-Item">
-                        <a href="${presets.prefix}03" class="s-Drawer_navLink">
-                            <div class="s-Drawer_navLink-Group">
-                                <span lang="en">Blog</span>
-                                <span lang="ja">ブログ</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="s-Drawer_navList-Item">
-                        <a href="${presets.prefix}04" class="s-Drawer_navLink">
-                            <div class="s-Drawer_navLink-Group">
-                                <span lang="en">Access</span>
-                                <span lang="ja">アクセス</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="s-Drawer_navList-Item">
-                        <a href="${presets.prefix}05" class="s-Drawer_navLink">
-                            <div class="s-Drawer_navLink-Group">
-                                <span lang="en">Faq</span>
-                                <span lang="ja">よくあるご質問</span>
-                            </div>
-                        </a>
-                    </li>
+                    ${this.route.map(({ id, title }) => html`
+                        <li class="s-Drawer_navList-Item">
+                            <a href="${id}" class="s-Drawer_navLink">
+                                <div class="s-Drawer_navLink-Group">
+                                    <span lang="en">${title.en}</span>
+                                    <span lang="ja">${title.ja}</span>
+                                </div>
+                            </a>
+                        </li>
+                    `)}
                 </ul>
             </div>
         </nav>
