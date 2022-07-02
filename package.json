@@ -41,6 +41,7 @@
     },
     "homepage": "https://github.com/street-m3/awesome-cosme#readme",
     "dependencies": {
+        "express": "^4.18.1",
         "lit": "^2.2.5"
     },
     "devDependencies": {
