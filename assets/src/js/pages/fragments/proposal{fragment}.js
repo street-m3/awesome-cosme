@@ -1,5 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { ref, createRef } from 'lit/directives/ref.js';
+import '../../pages/404';
+import { updateViewPages } from '../../components/site/link{template}';
 import reset from '../../styles/reset';
 import container from '../../styles/container';
 import headline from '../../styles/headline';
@@ -96,9 +98,15 @@ export class Proposal extends LitElement {
         ]
     }
 
+    root = createRef();
+
+    firstUpdated() {
+        updateViewPages(this.root.value);
+    }
+
     render() {
         return html`
-        <section class="fragment--Products-Proposal">
+        <section class="fragment--Products-Proposal" ${ref(this.root)}>
             <div class="ly-Inner_Grid -lg"> 
                 <div class="fragment--Products-Proposal_PicturePanel">
                     <figure class="fragment--Products-Proposal_Pictures">
@@ -118,7 +126,7 @@ export class Proposal extends LitElement {
                             <p class="o-Typography-Landing">
                                 AWESOME 公式ショップがリコメンドする、ギフトセット。<wbr>大切な方へ、お世話になった方へ、自分へのプレゼントに、ホリスティックな心地よさをおたのしみください。
                             </p>
-                            <a href="/404" class="u-uppercase u-flex u-flex-content-center u-flex-justify-center">
+                            <a href="/404" class="fragment--Products-Proposal_Link u-uppercase u-flex u-flex-content-center u-flex-justify-center">
                                 <span style="margin-right: 24px;">More</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="45" height="6" viewBox="0 0 45 6">
                                     <g id="グループ_10175" data-name="グループ 10175" transform="translate(1983.641 -1474)">
