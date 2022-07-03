@@ -17,6 +17,7 @@ import './pages/contact';
 import './pages/404';
 
 const app = document.getElementById('app');
+console.log(app);
 
 setTimeout(() => {
     app.dataset.animate = 'true';
