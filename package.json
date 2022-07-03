@@ -1,7 +1,8 @@
 {
     "name": "awesome-cosme",
     "version": "1.0.0",
-    "description": "-AWESOME COSME- Fictitious Brand HomePage",
+    "description": "AWESOME COSME Fictitious Brand HomePage",
+    "main": "server.js",
     "scripts": {
         "clean:fontcss": "rimraf ./assets/dist/Fonts/ && mkdirp ./assets/dist/Fonts/",
         "clean:js": "rimraf ./assets/dist/js/ && mkdirp ./assets/dist/js/",
@@ -23,7 +24,8 @@
         "watch:css": "watch 'npm run build:css' ./assets/src/css/",
         "watch:scripts": "watch 'npm run build:js' ./assets/src/js/",
         "watch:images": "onchange './assets/src/images/' -e '**/*.DS_Store' -- npm run build:images",
-        "watch": "npm-run-all -p watch:*"
+        "watch": "npm-run-all -p watch:*",
+        "start": "node server.js"
     },
     "repository": {
         "type": "git",
@@ -32,7 +34,8 @@
     "keywords": [
         "homepage",
         "lit",
-        "Web components"
+        "Web components",
+        "nodejs"
     ],
     "author": "Junichi Takabatake",
     "license": "MIT",
