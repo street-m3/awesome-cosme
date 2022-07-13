@@ -21,7 +21,7 @@ console.log(app);
 
 setTimeout(() => {
     app.dataset.animate = 'true';
-}, 300)
+}, 800)
 
 export class Router {
     constructor(root, anchors) {
