@@ -61,13 +61,32 @@ export class Header extends LitElement {
     headerRef = createRef();
     drawerRef = createRef();
 
+    _onClick(event) {
+        event.preventDefault();
+        document.getElementById('app').innerHTML = `
+            <section-sidebar></section-sidebar>
+            <section-slider-component></section-slider-component>
+            <gl-wrapper>
+                <section-about id="index_id01"></section-about>
+                <section-products id="index_id02"></section-products>
+                <section-proposal></section-proposal>
+                <section-release-info id="index_id03"></section-release-info>
+                <section-access id="index_id04"></section-access>
+                <section-faq id="index_id05"></section-faq>
+            </gl-wrapper>`
+    }
+
+    _callback() {
+        return this.headerRef.value.addEventListener('click', (e) => this._onClick(e));
+    }
+
     render() {
         return html`
         <header class="s-Header" role="banner">
             <div class="s-Header_Inner">
                 <h1 class="s-Header_Brand">
                     <div class="s-Header_Brand-Title">
-                        <a href="/" style="display: block;">
+                        <a href="/" style="display: block;" ${ref(this.headerRef)} @click="${this._callback}">
                             ${this.props.siteName}
                         </a>
                     </div>
