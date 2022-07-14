@@ -101,6 +101,42 @@ export class AccordionSection extends LitElement {
         ]
     }
 
+    constructor() {
+        super();
+        this.accordions = [
+            {
+                id: "faq-1",
+                title: "化粧品の使用期限はどの位ですか？",
+                description: "大まかな使用期限 化粧品の使用期限は一般的に、未開封で3年、開封済で半年から1年といわれています。",
+            },
+            {
+                id: "faq-2",
+                title: "化粧品の使用期限はどの位ですか？",
+                description: "大まかな使用期限 化粧品の使用期限は一般的に、未開封で3年、開封済で半年から1年といわれています。",
+            },
+            {
+                id: "faq-3",
+                title: "化粧品の使用期限はどの位ですか？",
+                description: "大まかな使用期限 化粧品の使用期限は一般的に、未開封で3年、開封済で半年から1年といわれています。",
+            },
+            {
+                id: "faq-4",
+                title: "化粧品の使用期限はどの位ですか？",
+                description: "大まかな使用期限 化粧品の使用期限は一般的に、未開封で3年、開封済で半年から1年といわれています。",
+            },
+            {
+                id: "faq-5",
+                title: "化粧品の使用期限はどの位ですか？",
+                description: "大まかな使用期限 化粧品の使用期限は一般的に、未開封で3年、開封済で半年から1年といわれています。",
+            },
+            {
+                id: "faq-6",
+                title: "化粧品の使用期限はどの位ですか？",
+                description: "大まかな使用期限 化粧品の使用期限は一般的に、未開封で3年、開封済で半年から1年といわれています。",
+            },
+        ]
+    }
+
     accordion = createRef();
 
     firstUpdated() {
@@ -117,96 +153,21 @@ export class AccordionSection extends LitElement {
                 </h2>
                 <div class="fragment--accordions">
                     <div class="c-accordion-container" ${ref(this.accordion)}>
-                        <!-- start -->
-                        <div class="c-accordion-item">
+                    ${this.accordions.map(({ id, title, description }) => html`
+                        <div id="${id}" class="c-accordion-item">
                             <h2 class="c-accordion-header js-accordion-header">
                                 <button type="button" class="c-accordion-tab">
-                                    化粧品の使用期限はどの位ですか？
+                                    ${title}
                                     <span class="c-accordion-tabicon"></span>
                                 </button>
                             </h2>
                             <div class="c-accordion-panel js-accordion-panel" style="overflow: hidden; box-sizing: border-box; max-height: 0px; transition: max-height 0.3s ease-out 0s;">
                                 <div class="c-accordion-content">
-                                    <p>大まかな使用期限 化粧品の使用期限は一般的に、未開封で3年、開封済で半年から1年といわれています。</p>
+                                    <p>${description}</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- end -->
-                        <!-- start -->
-                        <div class="c-accordion-item">
-                            <h2 class="c-accordion-header js-accordion-header">
-                                <button type="button" class="c-accordion-tab">
-                                    化粧品の使用期限はどの位ですか？
-                                    <span class="c-accordion-tabicon"></span>
-                                </button>
-                            </h2>
-                            <div class="c-accordion-panel js-accordion-panel" style="overflow: hidden; box-sizing: border-box; max-height: 0px; transition: max-height 0.3s ease-out 0s;">
-                                <div class="c-accordion-content">
-                                    <p>大まかな使用期限 化粧品の使用期限は一般的に、未開封で3年、開封済で半年から1年といわれています。</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end -->
-                        <!-- start -->
-                        <div class="c-accordion-item">
-                            <h2 class="c-accordion-header js-accordion-header">
-                                <button type="button" class="c-accordion-tab">
-                                    化粧品の使用期限はどの位ですか？
-                                    <span class="c-accordion-tabicon"></span>
-                                </button>
-                            </h2>
-                            <div class="c-accordion-panel js-accordion-panel" style="overflow: hidden; box-sizing: border-box; max-height: 0px; transition: max-height 0.3s ease-out 0s;">
-                                <div class="c-accordion-content">
-                                    <p>大まかな使用期限 化粧品の使用期限は一般的に、未開封で3年、開封済で半年から1年といわれています。</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end -->
-                        <!-- start -->
-                        <div class="c-accordion-item">
-                            <h2 class="c-accordion-header js-accordion-header">
-                                <button type="button" class="c-accordion-tab">
-                                    化粧品の使用期限はどの位ですか？
-                                    <span class="c-accordion-tabicon"></span>
-                                </button>
-                            </h2>
-                            <div class="c-accordion-panel js-accordion-panel" style="overflow: hidden; box-sizing: border-box; max-height: 0px; transition: max-height 0.3s ease-out 0s;">
-                                <div class="c-accordion-content">
-                                    <p>大まかな使用期限 化粧品の使用期限は一般的に、未開封で3年、開封済で半年から1年といわれています。</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end -->
-                        <!-- start -->
-                        <div class="c-accordion-item">
-                            <h2 class="c-accordion-header js-accordion-header">
-                                <button type="button" class="c-accordion-tab">
-                                    化粧品の使用期限はどの位ですか？
-                                    <span class="c-accordion-tabicon"></span>
-                                </button>
-                            </h2>
-                            <div class="c-accordion-panel js-accordion-panel" style="overflow: hidden; box-sizing: border-box; max-height: 0px; transition: max-height 0.3s ease-out 0s;">
-                                <div class="c-accordion-content">
-                                    <p>大まかな使用期限 化粧品の使用期限は一般的に、未開封で3年、開封済で半年から1年といわれています。</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end -->
-                        <!-- start -->
-                        <div class="c-accordion-item">
-                            <h2 class="c-accordion-header js-accordion-header">
-                                <button type="button" class="c-accordion-tab">
-                                    化粧品の使用期限はどの位ですか？
-                                    <span class="c-accordion-tabicon"></span>
-                                </button>
-                            </h2>
-                            <div class="c-accordion-panel js-accordion-panel" style="overflow: hidden; box-sizing: border-box; max-height: 0px; transition: max-height 0.3s ease-out 0s;">
-                                <div class="c-accordion-content">
-                                    <p>大まかな使用期限 化粧品の使用期限は一般的に、未開封で3年、開封済で半年から1年といわれています。</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end -->
+                    `)}
                     </div>
                 </div>
             </div>
