@@ -17,7 +17,6 @@ import './pages/contact';
 import './pages/404';
 
 const app = document.getElementById('app');
-console.log(app);
 
 setTimeout(() => {
     app.dataset.animate = 'true';
@@ -116,7 +115,7 @@ export class Router {
                         app.dataset.animate = 'true';
                     }, 800)
                 }
-            });
+            }, false);
         });
     }
 
