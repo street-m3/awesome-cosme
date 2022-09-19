@@ -100,7 +100,7 @@ export class Router {
         match.route.data(match)
     } 
 
-    // これの DOMをdata属性で取得する
+    // DOMをdata属性で取得する
     _documentTrigger() {
         this.anchors.forEach(anchor => {
             anchor.addEventListener('click', (e) => {
@@ -113,7 +113,7 @@ export class Router {
                         this._navbarAttributePath();
                         this._routerMain();
                         app.dataset.animate = 'true';
-                    }, 800)
+                    }, 800);
                 }
             }, false);
         });
