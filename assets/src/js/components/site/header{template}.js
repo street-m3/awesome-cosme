@@ -74,6 +74,7 @@ export class Header extends LitElement {
                 <section-access id="index_id04"></section-access>
                 <section-faq id="index_id05"></section-faq>
             </gl-wrapper>`
+        history.pushState(null, null, event.target.href);
     }
 
     _callback() {
