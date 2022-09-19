@@ -295,4 +295,4 @@ export class DrawerMaterial extends LitElement {
     }
 }
 
-customElements.get(tagName, DrawerMaterial) || customElements.define(tagName, DrawerMaterial);
+customElements.get(tagName) || customElements.define(tagName, DrawerMaterial);
