@@ -40,6 +40,10 @@ export class Header extends LitElement {
                 white-space: nowrap
             }
 
+            .s-Header_Brand-Title {
+                display: block;
+            }
+
             @media screen and (min-width:768px) {
                 .s-Header_Inner {
                     align-items: flex-start;
@@ -87,7 +91,7 @@ export class Header extends LitElement {
             <div class="s-Header_Inner">
                 <h1 class="s-Header_Brand">
                     <div class="s-Header_Brand-Title">
-                        <a href="/" style="display: block;" ${ref(this.headerRef)} @click="${this._callback}">
+                        <a href="/" ${ref(this.headerRef)} @click="${this._callback}">
                             ${this.props.siteName}
                         </a>
                     </div>

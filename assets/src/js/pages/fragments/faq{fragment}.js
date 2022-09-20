@@ -26,8 +26,19 @@ export class AccordionSection extends LitElement {
                 grid-row-gap: 0px;
             }
 
+            .c-headline-lv6 {
+                margin-bottom: 40px;
+            }
+
             .c-accordion-container {
                 grid-area: 1 / 2 / 2 / 3;
+            }
+            
+            .c-accordion-panel {
+                overflow: hidden;
+                box-sizing: border-box;
+                max-height: 0px;
+                transition: max-height 0.3s ease-out 0s;
             }
 
             .c-accordion-item {
@@ -148,7 +159,7 @@ export class AccordionSection extends LitElement {
         return html`
         <section class="fragment--Faq">
             <div class="ly-Inner_Grid -lg">
-                <h2 class="c-headline-lv6 u-uppercase" style="margin-bottom: 40px;">
+                <h2 class="c-headline-lv6 u-uppercase">
                     Faq
                 </h2>
                 <div class="fragment--accordions">
@@ -161,7 +172,7 @@ export class AccordionSection extends LitElement {
                                     <span class="c-accordion-tabicon"></span>
                                 </button>
                             </h2>
-                            <div class="c-accordion-panel js-accordion-panel" style="overflow: hidden; box-sizing: border-box; max-height: 0px; transition: max-height 0.3s ease-out 0s;">
+                            <div class="c-accordion-panel js-accordion-panel">
                                 <div class="c-accordion-content">
                                     <p>${description}</p>
                                 </div>

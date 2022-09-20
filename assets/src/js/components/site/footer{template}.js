@@ -17,6 +17,14 @@ export class Footer extends LitElement {
                 position: relative;
             }
 
+            .s-Footer_Image {
+                grid-column: 1/4;
+            }
+
+            .s-Footer_Image img {
+                width: 100%;
+            }
+
             .s-Footer_Contents-Render {
                 display: flex;
                 justify-content: center;
@@ -87,12 +95,12 @@ export class Footer extends LitElement {
         return html`
         <footer class="s-Footer" role="contentinfo">
             <div class="ly-Inner_Grid">
-                <div class="s-Footer_Image" style="grid-column: 1/4;">
+                <div class="s-Footer_Image">
                     <picture>
                         <source media="(min-width: 992px)" srcset="../images/footer-pc@1x.jpg" type="image/jpg">
                         <source media="(min-width: 1200px)" srcset="../images/footer-pc@2x.jpg" type="image/jpg">
                         <source srcset="./images/footer-sp@2x.jpg" type="image/jpg">
-                        <img src="../images/footer-sp@1x.jpg" alt="AWESOME COSME プロダクト画像" style="width: 100%;">
+                        <img src="../images/footer-sp@1x.jpg" alt="AWESOME COSME プロダクト画像">
                     </picture>
                 </div>
                 <div class="s-Footer_Contents-Render">

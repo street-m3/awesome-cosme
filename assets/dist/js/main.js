@@ -1,5 +1,5 @@
 /*! For license information please see main.js.LICENSE.txt */
-!function(){var t={222:function(){(()=>{let t=document.documentElement;t.nodeType&&(t.setAttribute("data-js-enabled","true"),console.info("JavaScript is loading properly!"))})()},528:function(){!function(){const t=document.querySelector('meta[name="viewport"]');function e(){const e=window.outerWidth>414?"width=device-width,initial-scale=1.0":"width=414";t.getAttribute("content")!==e&&t.setAttribute("content",e)}addEventListener("resize",e,!1),e()}()}},e={};function i(n){var s=e[n];if(void 0!==s)return s.exports;var a=e[n]={exports:{}};return t[n](a,a.exports,i),a.exports}!function(){"use strict";i(222);const t=window.ShadowRoot&&(void 0===window.ShadyCSS||window.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,e=Symbol(),n=new Map;class s{constructor(t,i){if(this._$cssResult$=!0,i!==e)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=t}get styleSheet(){let e=n.get(this.cssText);return t&&void 0===e&&(n.set(this.cssText,e=new CSSStyleSheet),e.replaceSync(this.cssText)),e}toString(){return this.cssText}}const a=t=>new s("string"==typeof t?t:t+"",e),r=(t,...i)=>{const n=1===t.length?t[0]:i.reduce(((e,i,n)=>e+(t=>{if(!0===t._$cssResult$)return t.cssText;if("number"==typeof t)return t;throw Error("Value passed to 'css' function must be a 'css' function result: "+t+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")})(i)+t[n+1]),t[0]);return new s(n,e)},o=t?t=>t:t=>t instanceof CSSStyleSheet?(t=>{let e="";for(const i of t.cssRules)e+=i.cssText;return a(e)})(t):t;var l;const c=window.trustedTypes,d=c?c.emptyScript:"",p=window.reactiveElementPolyfillSupport,m={toAttribute(t,e){switch(e){case Boolean:t=t?d:null;break;case Object:case Array:t=null==t?t:JSON.stringify(t)}return t},fromAttribute(t,e){let i=t;switch(e){case Boolean:i=null!==t;break;case Number:i=null===t?null:Number(t);break;case Object:case Array:try{i=JSON.parse(t)}catch(t){i=null}}return i}},h=(t,e)=>e!==t&&(e==e||t==t),u={attribute:!0,type:String,converter:m,reflect:!1,hasChanged:h};class g extends HTMLElement{constructor(){super(),this._$Et=new Map,this.isUpdatePending=!1,this.hasUpdated=!1,this._$Ei=null,this.o()}static addInitializer(t){var e;null!==(e=this.l)&&void 0!==e||(this.l=[]),this.l.push(t)}static get observedAttributes(){this.finalize();const t=[];return this.elementProperties.forEach(((e,i)=>{const n=this._$Eh(i,e);void 0!==n&&(this._$Eu.set(n,i),t.push(n))})),t}static createProperty(t,e=u){if(e.state&&(e.attribute=!1),this.finalize(),this.elementProperties.set(t,e),!e.noAccessor&&!this.prototype.hasOwnProperty(t)){const i="symbol"==typeof t?Symbol():"__"+t,n=this.getPropertyDescriptor(t,i,e);void 0!==n&&Object.defineProperty(this.prototype,t,n)}}static getPropertyDescriptor(t,e,i){return{get(){return this[e]},set(n){const s=this[t];this[e]=n,this.requestUpdate(t,s,i)},configurable:!0,enumerable:!0}}static getPropertyOptions(t){return this.elementProperties.get(t)||u}static finalize(){if(this.hasOwnProperty("finalized"))return!1;this.finalized=!0;const t=Object.getPrototypeOf(this);if(t.finalize(),this.elementProperties=new Map(t.elementProperties),this._$Eu=new Map,this.hasOwnProperty("properties")){const t=this.properties,e=[...Object.getOwnPropertyNames(t),...Object.getOwnPropertySymbols(t)];for(const i of e)this.createProperty(i,t[i])}return this.elementStyles=this.finalizeStyles(this.styles),!0}static finalizeStyles(t){const e=[];if(Array.isArray(t)){const i=new Set(t.flat(1/0).reverse());for(const t of i)e.unshift(o(t))}else void 0!==t&&e.push(o(t));return e}static _$Eh(t,e){const i=e.attribute;return!1===i?void 0:"string"==typeof i?i:"string"==typeof t?t.toLowerCase():void 0}o(){var t;this._$Ep=new Promise((t=>this.enableUpdating=t)),this._$AL=new Map,this._$Em(),this.requestUpdate(),null===(t=this.constructor.l)||void 0===t||t.forEach((t=>t(this)))}addController(t){var e,i;(null!==(e=this._$Eg)&&void 0!==e?e:this._$Eg=[]).push(t),void 0!==this.renderRoot&&this.isConnected&&(null===(i=t.hostConnected)||void 0===i||i.call(t))}removeController(t){var e;null===(e=this._$Eg)||void 0===e||e.splice(this._$Eg.indexOf(t)>>>0,1)}_$Em(){this.constructor.elementProperties.forEach(((t,e)=>{this.hasOwnProperty(e)&&(this._$Et.set(e,this[e]),delete this[e])}))}createRenderRoot(){var e;const i=null!==(e=this.shadowRoot)&&void 0!==e?e:this.attachShadow(this.constructor.shadowRootOptions);return((e,i)=>{t?e.adoptedStyleSheets=i.map((t=>t instanceof CSSStyleSheet?t:t.styleSheet)):i.forEach((t=>{const i=document.createElement("style"),n=window.litNonce;void 0!==n&&i.setAttribute("nonce",n),i.textContent=t.cssText,e.appendChild(i)}))})(i,this.constructor.elementStyles),i}connectedCallback(){var t;void 0===this.renderRoot&&(this.renderRoot=this.createRenderRoot()),this.enableUpdating(!0),null===(t=this._$Eg)||void 0===t||t.forEach((t=>{var e;return null===(e=t.hostConnected)||void 0===e?void 0:e.call(t)}))}enableUpdating(t){}disconnectedCallback(){var t;null===(t=this._$Eg)||void 0===t||t.forEach((t=>{var e;return null===(e=t.hostDisconnected)||void 0===e?void 0:e.call(t)}))}attributeChangedCallback(t,e,i){this._$AK(t,i)}_$ES(t,e,i=u){var n,s;const a=this.constructor._$Eh(t,i);if(void 0!==a&&!0===i.reflect){const r=(null!==(s=null===(n=i.converter)||void 0===n?void 0:n.toAttribute)&&void 0!==s?s:m.toAttribute)(e,i.type);this._$Ei=t,null==r?this.removeAttribute(a):this.setAttribute(a,r),this._$Ei=null}}_$AK(t,e){var i,n,s;const a=this.constructor,r=a._$Eu.get(t);if(void 0!==r&&this._$Ei!==r){const t=a.getPropertyOptions(r),o=t.converter,l=null!==(s=null!==(n=null===(i=o)||void 0===i?void 0:i.fromAttribute)&&void 0!==n?n:"function"==typeof o?o:null)&&void 0!==s?s:m.fromAttribute;this._$Ei=r,this[r]=l(e,t.type),this._$Ei=null}}requestUpdate(t,e,i){let n=!0;void 0!==t&&(((i=i||this.constructor.getPropertyOptions(t)).hasChanged||h)(this[t],e)?(this._$AL.has(t)||this._$AL.set(t,e),!0===i.reflect&&this._$Ei!==t&&(void 0===this._$EC&&(this._$EC=new Map),this._$EC.set(t,i))):n=!1),!this.isUpdatePending&&n&&(this._$Ep=this._$E_())}async _$E_(){this.isUpdatePending=!0;try{await this._$Ep}catch(t){Promise.reject(t)}const t=this.scheduleUpdate();return null!=t&&await t,!this.isUpdatePending}scheduleUpdate(){return this.performUpdate()}performUpdate(){var t;if(!this.isUpdatePending)return;this.hasUpdated,this._$Et&&(this._$Et.forEach(((t,e)=>this[e]=t)),this._$Et=void 0);let e=!1;const i=this._$AL;try{e=this.shouldUpdate(i),e?(this.willUpdate(i),null===(t=this._$Eg)||void 0===t||t.forEach((t=>{var e;return null===(e=t.hostUpdate)||void 0===e?void 0:e.call(t)})),this.update(i)):this._$EU()}catch(t){throw e=!1,this._$EU(),t}e&&this._$AE(i)}willUpdate(t){}_$AE(t){var e;null===(e=this._$Eg)||void 0===e||e.forEach((t=>{var e;return null===(e=t.hostUpdated)||void 0===e?void 0:e.call(t)})),this.hasUpdated||(this.hasUpdated=!0,this.firstUpdated(t)),this.updated(t)}_$EU(){this._$AL=new Map,this.isUpdatePending=!1}get updateComplete(){return this.getUpdateComplete()}getUpdateComplete(){return this._$Ep}shouldUpdate(t){return!0}update(t){void 0!==this._$EC&&(this._$EC.forEach(((t,e)=>this._$ES(e,this[e],t))),this._$EC=void 0),this._$EU()}updated(t){}firstUpdated(t){}}var f;g.finalized=!0,g.elementProperties=new Map,g.elementStyles=[],g.shadowRootOptions={mode:"open"},null==p||p({ReactiveElement:g}),(null!==(l=globalThis.reactiveElementVersions)&&void 0!==l?l:globalThis.reactiveElementVersions=[]).push("1.3.2");const v=globalThis.trustedTypes,y=v?v.createPolicy("lit-html",{createHTML:t=>t}):void 0,b=`lit$${(Math.random()+"").slice(9)}$`,x="?"+b,_=`<${x}>`,w=document,A=(t="")=>w.createComment(t),$=t=>null===t||"object"!=typeof t&&"function"!=typeof t,E=Array.isArray,P=t=>{var e;return E(t)||"function"==typeof(null===(e=t)||void 0===e?void 0:e[Symbol.iterator])},k=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,L=/-->/g,I=/>/g,C=/>|[ 	\n\r](?:([^\s"'>=/]+)([ 	\n\r]*=[ 	\n\r]*(?:[^ 	\n\r"'`<>=]|("|')|))|$)/g,S=/'/g,T=/"/g,z=/^(?:script|style|textarea|title)$/i,D=t=>(e,...i)=>({_$litType$:t,strings:e,values:i}),j=D(1),M=(D(2),Symbol.for("lit-noChange")),O=Symbol.for("lit-nothing"),H=new WeakMap,U=w.createTreeWalker(w,129,null,!1),B=(t,e)=>{const i=t.length-1,n=[];let s,a=2===e?"<svg>":"",r=k;for(let e=0;e<i;e++){const i=t[e];let o,l,c=-1,d=0;for(;d<i.length&&(r.lastIndex=d,l=r.exec(i),null!==l);)d=r.lastIndex,r===k?"!--"===l[1]?r=L:void 0!==l[1]?r=I:void 0!==l[2]?(z.test(l[2])&&(s=RegExp("</"+l[2],"g")),r=C):void 0!==l[3]&&(r=C):r===C?">"===l[0]?(r=null!=s?s:k,c=-1):void 0===l[1]?c=-2:(c=r.lastIndex-l[2].length,o=l[1],r=void 0===l[3]?C:'"'===l[3]?T:S):r===T||r===S?r=C:r===L||r===I?r=k:(r=C,s=void 0);const p=r===C&&t[e+1].startsWith("/>")?" ":"";a+=r===k?i+_:c>=0?(n.push(o),i.slice(0,c)+"$lit$"+i.slice(c)+b+p):i+b+(-2===c?(n.push(void 0),e):p)}const o=a+(t[i]||"<?>")+(2===e?"</svg>":"");if(!Array.isArray(t)||!t.hasOwnProperty("raw"))throw Error("invalid template strings array");return[void 0!==y?y.createHTML(o):o,n]};class F{constructor({strings:t,_$litType$:e},i){let n;this.parts=[];let s=0,a=0;const r=t.length-1,o=this.parts,[l,c]=B(t,e);if(this.el=F.createElement(l,i),U.currentNode=this.el.content,2===e){const t=this.el.content,e=t.firstChild;e.remove(),t.append(...e.childNodes)}for(;null!==(n=U.nextNode())&&o.length<r;){if(1===n.nodeType){if(n.hasAttributes()){const t=[];for(const e of n.getAttributeNames())if(e.endsWith("$lit$")||e.startsWith(b)){const i=c[a++];if(t.push(e),void 0!==i){const t=n.getAttribute(i.toLowerCase()+"$lit$").split(b),e=/([.?@])?(.*)/.exec(i);o.push({type:1,index:s,name:e[2],strings:t,ctor:"."===e[1]?G:"?"===e[1]?K:"@"===e[1]?X:Y})}else o.push({type:6,index:s})}for(const e of t)n.removeAttribute(e)}if(z.test(n.tagName)){const t=n.textContent.split(b),e=t.length-1;if(e>0){n.textContent=v?v.emptyScript:"";for(let i=0;i<e;i++)n.append(t[i],A()),U.nextNode(),o.push({type:2,index:++s});n.append(t[e],A())}}}else if(8===n.nodeType)if(n.data===x)o.push({type:2,index:s});else{let t=-1;for(;-1!==(t=n.data.indexOf(b,t+1));)o.push({type:7,index:s}),t+=b.length-1}s++}}static createElement(t,e){const i=w.createElement("template");return i.innerHTML=t,i}}function q(t,e,i=t,n){var s,a,r,o;if(e===M)return e;let l=void 0!==n?null===(s=i._$Cl)||void 0===s?void 0:s[n]:i._$Cu;const c=$(e)?void 0:e._$litDirective$;return(null==l?void 0:l.constructor)!==c&&(null===(a=null==l?void 0:l._$AO)||void 0===a||a.call(l,!1),void 0===c?l=void 0:(l=new c(t),l._$AT(t,i,n)),void 0!==n?(null!==(r=(o=i)._$Cl)&&void 0!==r?r:o._$Cl=[])[n]=l:i._$Cu=l),void 0!==l&&(e=q(t,l._$AS(t,e.values),l,n)),e}class R{constructor(t,e){this.v=[],this._$AN=void 0,this._$AD=t,this._$AM=e}get parentNode(){return this._$AM.parentNode}get _$AU(){return this._$AM._$AU}p(t){var e;const{el:{content:i},parts:n}=this._$AD,s=(null!==(e=null==t?void 0:t.creationScope)&&void 0!==e?e:w).importNode(i,!0);U.currentNode=s;let a=U.nextNode(),r=0,o=0,l=n[0];for(;void 0!==l;){if(r===l.index){let e;2===l.type?e=new N(a,a.nextSibling,this,t):1===l.type?e=new l.ctor(a,l.name,l.strings,this,t):6===l.type&&(e=new V(a,this,t)),this.v.push(e),l=n[++o]}r!==(null==l?void 0:l.index)&&(a=U.nextNode(),r++)}return s}m(t){let e=0;for(const i of this.v)void 0!==i&&(void 0!==i.strings?(i._$AI(t,i,e),e+=i.strings.length-2):i._$AI(t[e])),e++}}class N{constructor(t,e,i,n){var s;this.type=2,this._$AH=O,this._$AN=void 0,this._$AA=t,this._$AB=e,this._$AM=i,this.options=n,this._$Cg=null===(s=null==n?void 0:n.isConnected)||void 0===s||s}get _$AU(){var t,e;return null!==(e=null===(t=this._$AM)||void 0===t?void 0:t._$AU)&&void 0!==e?e:this._$Cg}get parentNode(){let t=this._$AA.parentNode;const e=this._$AM;return void 0!==e&&11===t.nodeType&&(t=e.parentNode),t}get startNode(){return this._$AA}get endNode(){return this._$AB}_$AI(t,e=this){t=q(this,t,e),$(t)?t===O||null==t||""===t?(this._$AH!==O&&this._$AR(),this._$AH=O):t!==this._$AH&&t!==M&&this.$(t):void 0!==t._$litType$?this.T(t):void 0!==t.nodeType?this.k(t):P(t)?this.S(t):this.$(t)}M(t,e=this._$AB){return this._$AA.parentNode.insertBefore(t,e)}k(t){this._$AH!==t&&(this._$AR(),this._$AH=this.M(t))}$(t){this._$AH!==O&&$(this._$AH)?this._$AA.nextSibling.data=t:this.k(w.createTextNode(t)),this._$AH=t}T(t){var e;const{values:i,_$litType$:n}=t,s="number"==typeof n?this._$AC(t):(void 0===n.el&&(n.el=F.createElement(n.h,this.options)),n);if((null===(e=this._$AH)||void 0===e?void 0:e._$AD)===s)this._$AH.m(i);else{const t=new R(s,this),e=t.p(this.options);t.m(i),this.k(e),this._$AH=t}}_$AC(t){let e=H.get(t.strings);return void 0===e&&H.set(t.strings,e=new F(t)),e}S(t){E(this._$AH)||(this._$AH=[],this._$AR());const e=this._$AH;let i,n=0;for(const s of t)n===e.length?e.push(i=new N(this.M(A()),this.M(A()),this,this.options)):i=e[n],i._$AI(s),n++;n<e.length&&(this._$AR(i&&i._$AB.nextSibling,n),e.length=n)}_$AR(t=this._$AA.nextSibling,e){var i;for(null===(i=this._$AP)||void 0===i||i.call(this,!1,!0,e);t&&t!==this._$AB;){const e=t.nextSibling;t.remove(),t=e}}setConnected(t){var e;void 0===this._$AM&&(this._$Cg=t,null===(e=this._$AP)||void 0===e||e.call(this,t))}}class Y{constructor(t,e,i,n,s){this.type=1,this._$AH=O,this._$AN=void 0,this.element=t,this.name=e,this._$AM=n,this.options=s,i.length>2||""!==i[0]||""!==i[1]?(this._$AH=Array(i.length-1).fill(new String),this.strings=i):this._$AH=O}get tagName(){return this.element.tagName}get _$AU(){return this._$AM._$AU}_$AI(t,e=this,i,n){const s=this.strings;let a=!1;if(void 0===s)t=q(this,t,e,0),a=!$(t)||t!==this._$AH&&t!==M,a&&(this._$AH=t);else{const n=t;let r,o;for(t=s[0],r=0;r<s.length-1;r++)o=q(this,n[i+r],e,r),o===M&&(o=this._$AH[r]),a||(a=!$(o)||o!==this._$AH[r]),o===O?t=O:t!==O&&(t+=(null!=o?o:"")+s[r+1]),this._$AH[r]=o}a&&!n&&this.C(t)}C(t){t===O?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,null!=t?t:"")}}class G extends Y{constructor(){super(...arguments),this.type=3}C(t){this.element[this.name]=t===O?void 0:t}}const W=v?v.emptyScript:"";class K extends Y{constructor(){super(...arguments),this.type=4}C(t){t&&t!==O?this.element.setAttribute(this.name,W):this.element.removeAttribute(this.name)}}class X extends Y{constructor(t,e,i,n,s){super(t,e,i,n,s),this.type=5}_$AI(t,e=this){var i;if((t=null!==(i=q(this,t,e,0))&&void 0!==i?i:O)===M)return;const n=this._$AH,s=t===O&&n!==O||t.capture!==n.capture||t.once!==n.once||t.passive!==n.passive,a=t!==O&&(n===O||s);s&&this.element.removeEventListener(this.name,this,n),a&&this.element.addEventListener(this.name,this,t),this._$AH=t}handleEvent(t){var e,i;"function"==typeof this._$AH?this._$AH.call(null!==(i=null===(e=this.options)||void 0===e?void 0:e.host)&&void 0!==i?i:this.element,t):this._$AH.handleEvent(t)}}class V{constructor(t,e,i){this.element=t,this.type=6,this._$AN=void 0,this._$AM=e,this.options=i}get _$AU(){return this._$AM._$AU}_$AI(t){q(this,t)}}const Z={L:"$lit$",P:b,V:x,I:1,N:B,R:R,j:P,D:q,H:N,F:Y,O:K,W:X,B:G,Z:V},J=window.litHtmlPolyfillSupport;var Q,tt;null==J||J(F,N),(null!==(f=globalThis.litHtmlVersions)&&void 0!==f?f:globalThis.litHtmlVersions=[]).push("2.2.5");class et extends g{constructor(){super(...arguments),this.renderOptions={host:this},this._$Dt=void 0}createRenderRoot(){var t,e;const i=super.createRenderRoot();return null!==(t=(e=this.renderOptions).renderBefore)&&void 0!==t||(e.renderBefore=i.firstChild),i}update(t){const e=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),super.update(t),this._$Dt=((t,e,i)=>{var n,s;const a=null!==(n=null==i?void 0:i.renderBefore)&&void 0!==n?n:e;let r=a._$litPart$;if(void 0===r){const t=null!==(s=null==i?void 0:i.renderBefore)&&void 0!==s?s:null;a._$litPart$=r=new N(e.insertBefore(A(),t),t,void 0,null!=i?i:{})}return r._$AI(t),r})(e,this.renderRoot,this.renderOptions)}connectedCallback(){var t;super.connectedCallback(),null===(t=this._$Dt)||void 0===t||t.setConnected(!0)}disconnectedCallback(){var t;super.disconnectedCallback(),null===(t=this._$Dt)||void 0===t||t.setConnected(!1)}render(){return M}}et.finalized=!0,et._$litElement$=!0,null===(Q=globalThis.litElementHydrateSupport)||void 0===Q||Q.call(globalThis,{LitElement:et});const it=globalThis.litElementPolyfillSupport;function nt(t){let e=t,i=window.pageYOffset,n=e-i,s=null;window.requestAnimationFrame((function t(e){s||(s=e);const a=e-s;window.scrollTo(0,function(t,e,i,n){return(t/=375)<1?i/2*t*t*t+e:i/2*((t-=2)*t*t+2)+e}(a,i,n)),a<750&&window.requestAnimationFrame(t)}))}null==it||it({LitElement:et}),(null!==(tt=globalThis.litElementVersions)&&void 0!==tt?tt:globalThis.litElementVersions=[]).push("3.2.0");var st=r`
+!function(){var t={222:function(){(()=>{let t=document.documentElement;t.nodeType&&(t.setAttribute("data-js-enabled","true"),console.info("JavaScript is loading properly!"))})()},528:function(){!function(){const t=document.querySelector('meta[name="viewport"]');function e(){const e=window.outerWidth>414?"width=device-width,initial-scale=1.0":"width=414";t.getAttribute("content")!==e&&t.setAttribute("content",e)}addEventListener("resize",e,!1),e()}()}},e={};function i(n){var s=e[n];if(void 0!==s)return s.exports;var a=e[n]={exports:{}};return t[n](a,a.exports,i),a.exports}!function(){"use strict";i(222);const t=window.ShadowRoot&&(void 0===window.ShadyCSS||window.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,e=Symbol(),n=new Map;class s{constructor(t,i){if(this._$cssResult$=!0,i!==e)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=t}get styleSheet(){let e=n.get(this.cssText);return t&&void 0===e&&(n.set(this.cssText,e=new CSSStyleSheet),e.replaceSync(this.cssText)),e}toString(){return this.cssText}}const a=t=>new s("string"==typeof t?t:t+"",e),r=(t,...i)=>{const n=1===t.length?t[0]:i.reduce(((e,i,n)=>e+(t=>{if(!0===t._$cssResult$)return t.cssText;if("number"==typeof t)return t;throw Error("Value passed to 'css' function must be a 'css' function result: "+t+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")})(i)+t[n+1]),t[0]);return new s(n,e)},o=t?t=>t:t=>t instanceof CSSStyleSheet?(t=>{let e="";for(const i of t.cssRules)e+=i.cssText;return a(e)})(t):t;var l;const c=window.trustedTypes,d=c?c.emptyScript:"",p=window.reactiveElementPolyfillSupport,m={toAttribute(t,e){switch(e){case Boolean:t=t?d:null;break;case Object:case Array:t=null==t?t:JSON.stringify(t)}return t},fromAttribute(t,e){let i=t;switch(e){case Boolean:i=null!==t;break;case Number:i=null===t?null:Number(t);break;case Object:case Array:try{i=JSON.parse(t)}catch(t){i=null}}return i}},h=(t,e)=>e!==t&&(e==e||t==t),u={attribute:!0,type:String,converter:m,reflect:!1,hasChanged:h};class g extends HTMLElement{constructor(){super(),this._$Et=new Map,this.isUpdatePending=!1,this.hasUpdated=!1,this._$Ei=null,this.o()}static addInitializer(t){var e;null!==(e=this.l)&&void 0!==e||(this.l=[]),this.l.push(t)}static get observedAttributes(){this.finalize();const t=[];return this.elementProperties.forEach(((e,i)=>{const n=this._$Eh(i,e);void 0!==n&&(this._$Eu.set(n,i),t.push(n))})),t}static createProperty(t,e=u){if(e.state&&(e.attribute=!1),this.finalize(),this.elementProperties.set(t,e),!e.noAccessor&&!this.prototype.hasOwnProperty(t)){const i="symbol"==typeof t?Symbol():"__"+t,n=this.getPropertyDescriptor(t,i,e);void 0!==n&&Object.defineProperty(this.prototype,t,n)}}static getPropertyDescriptor(t,e,i){return{get(){return this[e]},set(n){const s=this[t];this[e]=n,this.requestUpdate(t,s,i)},configurable:!0,enumerable:!0}}static getPropertyOptions(t){return this.elementProperties.get(t)||u}static finalize(){if(this.hasOwnProperty("finalized"))return!1;this.finalized=!0;const t=Object.getPrototypeOf(this);if(t.finalize(),this.elementProperties=new Map(t.elementProperties),this._$Eu=new Map,this.hasOwnProperty("properties")){const t=this.properties,e=[...Object.getOwnPropertyNames(t),...Object.getOwnPropertySymbols(t)];for(const i of e)this.createProperty(i,t[i])}return this.elementStyles=this.finalizeStyles(this.styles),!0}static finalizeStyles(t){const e=[];if(Array.isArray(t)){const i=new Set(t.flat(1/0).reverse());for(const t of i)e.unshift(o(t))}else void 0!==t&&e.push(o(t));return e}static _$Eh(t,e){const i=e.attribute;return!1===i?void 0:"string"==typeof i?i:"string"==typeof t?t.toLowerCase():void 0}o(){var t;this._$Ep=new Promise((t=>this.enableUpdating=t)),this._$AL=new Map,this._$Em(),this.requestUpdate(),null===(t=this.constructor.l)||void 0===t||t.forEach((t=>t(this)))}addController(t){var e,i;(null!==(e=this._$Eg)&&void 0!==e?e:this._$Eg=[]).push(t),void 0!==this.renderRoot&&this.isConnected&&(null===(i=t.hostConnected)||void 0===i||i.call(t))}removeController(t){var e;null===(e=this._$Eg)||void 0===e||e.splice(this._$Eg.indexOf(t)>>>0,1)}_$Em(){this.constructor.elementProperties.forEach(((t,e)=>{this.hasOwnProperty(e)&&(this._$Et.set(e,this[e]),delete this[e])}))}createRenderRoot(){var e;const i=null!==(e=this.shadowRoot)&&void 0!==e?e:this.attachShadow(this.constructor.shadowRootOptions);return((e,i)=>{t?e.adoptedStyleSheets=i.map((t=>t instanceof CSSStyleSheet?t:t.styleSheet)):i.forEach((t=>{const i=document.createElement("style"),n=window.litNonce;void 0!==n&&i.setAttribute("nonce",n),i.textContent=t.cssText,e.appendChild(i)}))})(i,this.constructor.elementStyles),i}connectedCallback(){var t;void 0===this.renderRoot&&(this.renderRoot=this.createRenderRoot()),this.enableUpdating(!0),null===(t=this._$Eg)||void 0===t||t.forEach((t=>{var e;return null===(e=t.hostConnected)||void 0===e?void 0:e.call(t)}))}enableUpdating(t){}disconnectedCallback(){var t;null===(t=this._$Eg)||void 0===t||t.forEach((t=>{var e;return null===(e=t.hostDisconnected)||void 0===e?void 0:e.call(t)}))}attributeChangedCallback(t,e,i){this._$AK(t,i)}_$ES(t,e,i=u){var n,s;const a=this.constructor._$Eh(t,i);if(void 0!==a&&!0===i.reflect){const r=(null!==(s=null===(n=i.converter)||void 0===n?void 0:n.toAttribute)&&void 0!==s?s:m.toAttribute)(e,i.type);this._$Ei=t,null==r?this.removeAttribute(a):this.setAttribute(a,r),this._$Ei=null}}_$AK(t,e){var i,n,s;const a=this.constructor,r=a._$Eu.get(t);if(void 0!==r&&this._$Ei!==r){const t=a.getPropertyOptions(r),o=t.converter,l=null!==(s=null!==(n=null===(i=o)||void 0===i?void 0:i.fromAttribute)&&void 0!==n?n:"function"==typeof o?o:null)&&void 0!==s?s:m.fromAttribute;this._$Ei=r,this[r]=l(e,t.type),this._$Ei=null}}requestUpdate(t,e,i){let n=!0;void 0!==t&&(((i=i||this.constructor.getPropertyOptions(t)).hasChanged||h)(this[t],e)?(this._$AL.has(t)||this._$AL.set(t,e),!0===i.reflect&&this._$Ei!==t&&(void 0===this._$EC&&(this._$EC=new Map),this._$EC.set(t,i))):n=!1),!this.isUpdatePending&&n&&(this._$Ep=this._$E_())}async _$E_(){this.isUpdatePending=!0;try{await this._$Ep}catch(t){Promise.reject(t)}const t=this.scheduleUpdate();return null!=t&&await t,!this.isUpdatePending}scheduleUpdate(){return this.performUpdate()}performUpdate(){var t;if(!this.isUpdatePending)return;this.hasUpdated,this._$Et&&(this._$Et.forEach(((t,e)=>this[e]=t)),this._$Et=void 0);let e=!1;const i=this._$AL;try{e=this.shouldUpdate(i),e?(this.willUpdate(i),null===(t=this._$Eg)||void 0===t||t.forEach((t=>{var e;return null===(e=t.hostUpdate)||void 0===e?void 0:e.call(t)})),this.update(i)):this._$EU()}catch(t){throw e=!1,this._$EU(),t}e&&this._$AE(i)}willUpdate(t){}_$AE(t){var e;null===(e=this._$Eg)||void 0===e||e.forEach((t=>{var e;return null===(e=t.hostUpdated)||void 0===e?void 0:e.call(t)})),this.hasUpdated||(this.hasUpdated=!0,this.firstUpdated(t)),this.updated(t)}_$EU(){this._$AL=new Map,this.isUpdatePending=!1}get updateComplete(){return this.getUpdateComplete()}getUpdateComplete(){return this._$Ep}shouldUpdate(t){return!0}update(t){void 0!==this._$EC&&(this._$EC.forEach(((t,e)=>this._$ES(e,this[e],t))),this._$EC=void 0),this._$EU()}updated(t){}firstUpdated(t){}}var f;g.finalized=!0,g.elementProperties=new Map,g.elementStyles=[],g.shadowRootOptions={mode:"open"},null==p||p({ReactiveElement:g}),(null!==(l=globalThis.reactiveElementVersions)&&void 0!==l?l:globalThis.reactiveElementVersions=[]).push("1.3.2");const v=globalThis.trustedTypes,b=v?v.createPolicy("lit-html",{createHTML:t=>t}):void 0,y=`lit$${(Math.random()+"").slice(9)}$`,x="?"+y,_=`<${x}>`,w=document,A=(t="")=>w.createComment(t),$=t=>null===t||"object"!=typeof t&&"function"!=typeof t,E=Array.isArray,P=t=>{var e;return E(t)||"function"==typeof(null===(e=t)||void 0===e?void 0:e[Symbol.iterator])},k=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,C=/-->/g,I=/>/g,L=/>|[ 	\n\r](?:([^\s"'>=/]+)([ 	\n\r]*=[ 	\n\r]*(?:[^ 	\n\r"'`<>=]|("|')|))|$)/g,S=/'/g,T=/"/g,z=/^(?:script|style|textarea|title)$/i,D=t=>(e,...i)=>({_$litType$:t,strings:e,values:i}),j=D(1),M=(D(2),Symbol.for("lit-noChange")),O=Symbol.for("lit-nothing"),H=new WeakMap,B=w.createTreeWalker(w,129,null,!1),U=(t,e)=>{const i=t.length-1,n=[];let s,a=2===e?"<svg>":"",r=k;for(let e=0;e<i;e++){const i=t[e];let o,l,c=-1,d=0;for(;d<i.length&&(r.lastIndex=d,l=r.exec(i),null!==l);)d=r.lastIndex,r===k?"!--"===l[1]?r=C:void 0!==l[1]?r=I:void 0!==l[2]?(z.test(l[2])&&(s=RegExp("</"+l[2],"g")),r=L):void 0!==l[3]&&(r=L):r===L?">"===l[0]?(r=null!=s?s:k,c=-1):void 0===l[1]?c=-2:(c=r.lastIndex-l[2].length,o=l[1],r=void 0===l[3]?L:'"'===l[3]?T:S):r===T||r===S?r=L:r===C||r===I?r=k:(r=L,s=void 0);const p=r===L&&t[e+1].startsWith("/>")?" ":"";a+=r===k?i+_:c>=0?(n.push(o),i.slice(0,c)+"$lit$"+i.slice(c)+y+p):i+y+(-2===c?(n.push(void 0),e):p)}const o=a+(t[i]||"<?>")+(2===e?"</svg>":"");if(!Array.isArray(t)||!t.hasOwnProperty("raw"))throw Error("invalid template strings array");return[void 0!==b?b.createHTML(o):o,n]};class F{constructor({strings:t,_$litType$:e},i){let n;this.parts=[];let s=0,a=0;const r=t.length-1,o=this.parts,[l,c]=U(t,e);if(this.el=F.createElement(l,i),B.currentNode=this.el.content,2===e){const t=this.el.content,e=t.firstChild;e.remove(),t.append(...e.childNodes)}for(;null!==(n=B.nextNode())&&o.length<r;){if(1===n.nodeType){if(n.hasAttributes()){const t=[];for(const e of n.getAttributeNames())if(e.endsWith("$lit$")||e.startsWith(y)){const i=c[a++];if(t.push(e),void 0!==i){const t=n.getAttribute(i.toLowerCase()+"$lit$").split(y),e=/([.?@])?(.*)/.exec(i);o.push({type:1,index:s,name:e[2],strings:t,ctor:"."===e[1]?G:"?"===e[1]?K:"@"===e[1]?X:Y})}else o.push({type:6,index:s})}for(const e of t)n.removeAttribute(e)}if(z.test(n.tagName)){const t=n.textContent.split(y),e=t.length-1;if(e>0){n.textContent=v?v.emptyScript:"";for(let i=0;i<e;i++)n.append(t[i],A()),B.nextNode(),o.push({type:2,index:++s});n.append(t[e],A())}}}else if(8===n.nodeType)if(n.data===x)o.push({type:2,index:s});else{let t=-1;for(;-1!==(t=n.data.indexOf(y,t+1));)o.push({type:7,index:s}),t+=y.length-1}s++}}static createElement(t,e){const i=w.createElement("template");return i.innerHTML=t,i}}function R(t,e,i=t,n){var s,a,r,o;if(e===M)return e;let l=void 0!==n?null===(s=i._$Cl)||void 0===s?void 0:s[n]:i._$Cu;const c=$(e)?void 0:e._$litDirective$;return(null==l?void 0:l.constructor)!==c&&(null===(a=null==l?void 0:l._$AO)||void 0===a||a.call(l,!1),void 0===c?l=void 0:(l=new c(t),l._$AT(t,i,n)),void 0!==n?(null!==(r=(o=i)._$Cl)&&void 0!==r?r:o._$Cl=[])[n]=l:i._$Cu=l),void 0!==l&&(e=R(t,l._$AS(t,e.values),l,n)),e}class q{constructor(t,e){this.v=[],this._$AN=void 0,this._$AD=t,this._$AM=e}get parentNode(){return this._$AM.parentNode}get _$AU(){return this._$AM._$AU}p(t){var e;const{el:{content:i},parts:n}=this._$AD,s=(null!==(e=null==t?void 0:t.creationScope)&&void 0!==e?e:w).importNode(i,!0);B.currentNode=s;let a=B.nextNode(),r=0,o=0,l=n[0];for(;void 0!==l;){if(r===l.index){let e;2===l.type?e=new N(a,a.nextSibling,this,t):1===l.type?e=new l.ctor(a,l.name,l.strings,this,t):6===l.type&&(e=new V(a,this,t)),this.v.push(e),l=n[++o]}r!==(null==l?void 0:l.index)&&(a=B.nextNode(),r++)}return s}m(t){let e=0;for(const i of this.v)void 0!==i&&(void 0!==i.strings?(i._$AI(t,i,e),e+=i.strings.length-2):i._$AI(t[e])),e++}}class N{constructor(t,e,i,n){var s;this.type=2,this._$AH=O,this._$AN=void 0,this._$AA=t,this._$AB=e,this._$AM=i,this.options=n,this._$Cg=null===(s=null==n?void 0:n.isConnected)||void 0===s||s}get _$AU(){var t,e;return null!==(e=null===(t=this._$AM)||void 0===t?void 0:t._$AU)&&void 0!==e?e:this._$Cg}get parentNode(){let t=this._$AA.parentNode;const e=this._$AM;return void 0!==e&&11===t.nodeType&&(t=e.parentNode),t}get startNode(){return this._$AA}get endNode(){return this._$AB}_$AI(t,e=this){t=R(this,t,e),$(t)?t===O||null==t||""===t?(this._$AH!==O&&this._$AR(),this._$AH=O):t!==this._$AH&&t!==M&&this.$(t):void 0!==t._$litType$?this.T(t):void 0!==t.nodeType?this.k(t):P(t)?this.S(t):this.$(t)}M(t,e=this._$AB){return this._$AA.parentNode.insertBefore(t,e)}k(t){this._$AH!==t&&(this._$AR(),this._$AH=this.M(t))}$(t){this._$AH!==O&&$(this._$AH)?this._$AA.nextSibling.data=t:this.k(w.createTextNode(t)),this._$AH=t}T(t){var e;const{values:i,_$litType$:n}=t,s="number"==typeof n?this._$AC(t):(void 0===n.el&&(n.el=F.createElement(n.h,this.options)),n);if((null===(e=this._$AH)||void 0===e?void 0:e._$AD)===s)this._$AH.m(i);else{const t=new q(s,this),e=t.p(this.options);t.m(i),this.k(e),this._$AH=t}}_$AC(t){let e=H.get(t.strings);return void 0===e&&H.set(t.strings,e=new F(t)),e}S(t){E(this._$AH)||(this._$AH=[],this._$AR());const e=this._$AH;let i,n=0;for(const s of t)n===e.length?e.push(i=new N(this.M(A()),this.M(A()),this,this.options)):i=e[n],i._$AI(s),n++;n<e.length&&(this._$AR(i&&i._$AB.nextSibling,n),e.length=n)}_$AR(t=this._$AA.nextSibling,e){var i;for(null===(i=this._$AP)||void 0===i||i.call(this,!1,!0,e);t&&t!==this._$AB;){const e=t.nextSibling;t.remove(),t=e}}setConnected(t){var e;void 0===this._$AM&&(this._$Cg=t,null===(e=this._$AP)||void 0===e||e.call(this,t))}}class Y{constructor(t,e,i,n,s){this.type=1,this._$AH=O,this._$AN=void 0,this.element=t,this.name=e,this._$AM=n,this.options=s,i.length>2||""!==i[0]||""!==i[1]?(this._$AH=Array(i.length-1).fill(new String),this.strings=i):this._$AH=O}get tagName(){return this.element.tagName}get _$AU(){return this._$AM._$AU}_$AI(t,e=this,i,n){const s=this.strings;let a=!1;if(void 0===s)t=R(this,t,e,0),a=!$(t)||t!==this._$AH&&t!==M,a&&(this._$AH=t);else{const n=t;let r,o;for(t=s[0],r=0;r<s.length-1;r++)o=R(this,n[i+r],e,r),o===M&&(o=this._$AH[r]),a||(a=!$(o)||o!==this._$AH[r]),o===O?t=O:t!==O&&(t+=(null!=o?o:"")+s[r+1]),this._$AH[r]=o}a&&!n&&this.C(t)}C(t){t===O?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,null!=t?t:"")}}class G extends Y{constructor(){super(...arguments),this.type=3}C(t){this.element[this.name]=t===O?void 0:t}}const W=v?v.emptyScript:"";class K extends Y{constructor(){super(...arguments),this.type=4}C(t){t&&t!==O?this.element.setAttribute(this.name,W):this.element.removeAttribute(this.name)}}class X extends Y{constructor(t,e,i,n,s){super(t,e,i,n,s),this.type=5}_$AI(t,e=this){var i;if((t=null!==(i=R(this,t,e,0))&&void 0!==i?i:O)===M)return;const n=this._$AH,s=t===O&&n!==O||t.capture!==n.capture||t.once!==n.once||t.passive!==n.passive,a=t!==O&&(n===O||s);s&&this.element.removeEventListener(this.name,this,n),a&&this.element.addEventListener(this.name,this,t),this._$AH=t}handleEvent(t){var e,i;"function"==typeof this._$AH?this._$AH.call(null!==(i=null===(e=this.options)||void 0===e?void 0:e.host)&&void 0!==i?i:this.element,t):this._$AH.handleEvent(t)}}class V{constructor(t,e,i){this.element=t,this.type=6,this._$AN=void 0,this._$AM=e,this.options=i}get _$AU(){return this._$AM._$AU}_$AI(t){R(this,t)}}const Z={L:"$lit$",P:y,V:x,I:1,N:U,R:q,j:P,D:R,H:N,F:Y,O:K,W:X,B:G,Z:V},J=window.litHtmlPolyfillSupport;var Q,tt;null==J||J(F,N),(null!==(f=globalThis.litHtmlVersions)&&void 0!==f?f:globalThis.litHtmlVersions=[]).push("2.2.5");class et extends g{constructor(){super(...arguments),this.renderOptions={host:this},this._$Dt=void 0}createRenderRoot(){var t,e;const i=super.createRenderRoot();return null!==(t=(e=this.renderOptions).renderBefore)&&void 0!==t||(e.renderBefore=i.firstChild),i}update(t){const e=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),super.update(t),this._$Dt=((t,e,i)=>{var n,s;const a=null!==(n=null==i?void 0:i.renderBefore)&&void 0!==n?n:e;let r=a._$litPart$;if(void 0===r){const t=null!==(s=null==i?void 0:i.renderBefore)&&void 0!==s?s:null;a._$litPart$=r=new N(e.insertBefore(A(),t),t,void 0,null!=i?i:{})}return r._$AI(t),r})(e,this.renderRoot,this.renderOptions)}connectedCallback(){var t;super.connectedCallback(),null===(t=this._$Dt)||void 0===t||t.setConnected(!0)}disconnectedCallback(){var t;super.disconnectedCallback(),null===(t=this._$Dt)||void 0===t||t.setConnected(!1)}render(){return M}}et.finalized=!0,et._$litElement$=!0,null===(Q=globalThis.litElementHydrateSupport)||void 0===Q||Q.call(globalThis,{LitElement:et});const it=globalThis.litElementPolyfillSupport;function nt(t){let e=t,i=window.pageYOffset,n=e-i,s=null;window.requestAnimationFrame((function t(e){s||(s=e);const a=e-s;window.scrollTo(0,function(t,e,i,n){return(t/=375)<1?i/2*t*t*t+e:i/2*((t-=2)*t*t+2)+e}(a,i,n)),a<750&&window.requestAnimationFrame(t)}))}null==it||it({LitElement:et}),(null!==(tt=globalThis.litElementVersions)&&void 0!==tt?tt:globalThis.litElementVersions=[]).push("3.2.0");var st=r`
     *,
     ::before,
     ::after {
@@ -434,7 +434,7 @@
             `]}render(){return j`
         <div class="gl-wrapper">
             <slot></slot>
-        </div>`}});const{H:ot}=Z,lt=(t,e)=>{var i,n;const s=t._$AN;if(void 0===s)return!1;for(const t of s)null===(n=(i=t)._$AO)||void 0===n||n.call(i,e,!1),lt(t,e);return!0},ct=t=>{let e,i;do{if(void 0===(e=t._$AM))break;i=e._$AN,i.delete(t),t=e}while(0===(null==i?void 0:i.size))},dt=t=>{for(let e;e=t._$AM;t=e){let i=e._$AN;if(void 0===i)e._$AN=i=new Set;else if(i.has(t))break;i.add(t),ht(e)}};function pt(t){void 0!==this._$AN?(ct(this),this._$AM=t,dt(this)):this._$AM=t}function mt(t,e=!1,i=0){const n=this._$AH,s=this._$AN;if(void 0!==s&&0!==s.size)if(e)if(Array.isArray(n))for(let t=i;t<n.length;t++)lt(n[t],!1),ct(n[t]);else null!=n&&(lt(n,!1),ct(n));else lt(this,t)}const ht=t=>{var e,i,n,s;2==t.type&&(null!==(e=(n=t)._$AP)&&void 0!==e||(n._$AP=mt),null!==(i=(s=t)._$AQ)&&void 0!==i||(s._$AQ=pt))},ut=()=>new gt;class gt{}const ft=new WeakMap,vt=(xt=class extends class extends class{constructor(t){}get _$AU(){return this._$AM._$AU}_$AT(t,e,i){this._$Ct=t,this._$AM=e,this._$Ci=i}_$AS(t,e){return this.update(t,e)}update(t,e){return this.render(...e)}}{constructor(){super(...arguments),this._$AN=void 0}_$AT(t,e,i){super._$AT(t,e,i),dt(this),this.isConnected=t._$AU}_$AO(t,e=!0){var i,n;t!==this.isConnected&&(this.isConnected=t,t?null===(i=this.reconnected)||void 0===i||i.call(this):null===(n=this.disconnected)||void 0===n||n.call(this)),e&&(lt(this,t),ct(this))}setValue(t){if((t=>void 0===this._$Ct.strings)())this._$Ct._$AI(t,this);else{const e=[...this._$Ct._$AH];e[this._$Ci]=t,this._$Ct._$AI(e,this,0)}}disconnected(){}reconnected(){}}{render(t){return O}update(t,[e]){var i;const n=e!==this.U;return n&&void 0!==this.U&&this.ot(void 0),(n||this.rt!==this.lt)&&(this.U=e,this.ht=null===(i=t.options)||void 0===i?void 0:i.host,this.ot(this.lt=t.element)),O}ot(t){var e;if("function"==typeof this.U){const i=null!==(e=this.ht)&&void 0!==e?e:globalThis;let n=ft.get(i);void 0===n&&(n=new WeakMap,ft.set(i,n)),void 0!==n.get(this.U)&&this.U.call(this.ht,void 0),n.set(this.U,t),void 0!==t&&this.U.call(this.ht,t)}else this.U.value=t}get rt(){var t,e,i;return"function"==typeof this.U?null===(e=ft.get(null!==(t=this.ht)&&void 0!==t?t:globalThis))||void 0===e?void 0:e.get(this.U):null===(i=this.U)||void 0===i?void 0:i.value}disconnected(){this.rt===this.lt&&this.ot(void 0)}reconnected(){this.ot(this.lt)}},(...t)=>({_$litDirective$:xt,values:t})),yt=location.href.split(/#/)[0],bt=(yt.substring(0,yt.lastIndexOf("/")),"AWESOME COSME");var xt;class _t{constructor(t,e,i){this.options=Object.assign({delay:5e3,fader:500,counter:0,zoom:"data-effect",dotted:!0},i),this.stylesheet=document.styleSheets,this.useSheet=this.stylesheet[this.stylesheet.length-1],this.container=t,this.pictures=e,this.delay=this.options.delay,this.fader=this.options.fader,this.counter=this.options.counter,this.dotted=this.options.dotted,this.zoom=this.options.zoom,this._init()}_init(){if(!this.container)return!1;this._process()}_process(){if(this.pictures[0].dataset.slideActive="true",this.pictures.length<2)return console.warn("スライド画像を2枚以上用意して設定してください。");setInterval((()=>{if(this.counter<this.pictures.length-1){let t=this.pictures[this.counter],e=this.pictures[++this.counter];"zoom"===this.container.getAttribute(this.zoom)?this._zoomAnimation(t,e):this._internalAttribute(t,e)}else{let t=this.pictures[this.counter],e=this.pictures[this.counter=0];"zoom"===this.container.getAttribute(this.zoom)?this._zoomAnimation(t,e):this._internalAttribute(t,e)}}),this.delay)}_internalAttribute(t,e){t.dataset.slideActive="false",e.dataset.slideActive="true"}_zoomAnimation(t,e){t.dataset.slideActive="false",e.dataset.slideActive="true",e.dataset.zoomResolve="true",setTimeout((()=>{t.dataset.zoomResolve="false"}),this.fader)}_transparent(t){return t.style.opacity=1}}customElements.get("section-slider-component")||customElements.define("section-slider-component",class extends et{static get styles(){return[st,r`
+        </div>`}});const{H:ot}=Z,lt=(t,e)=>{var i,n;const s=t._$AN;if(void 0===s)return!1;for(const t of s)null===(n=(i=t)._$AO)||void 0===n||n.call(i,e,!1),lt(t,e);return!0},ct=t=>{let e,i;do{if(void 0===(e=t._$AM))break;i=e._$AN,i.delete(t),t=e}while(0===(null==i?void 0:i.size))},dt=t=>{for(let e;e=t._$AM;t=e){let i=e._$AN;if(void 0===i)e._$AN=i=new Set;else if(i.has(t))break;i.add(t),ht(e)}};function pt(t){void 0!==this._$AN?(ct(this),this._$AM=t,dt(this)):this._$AM=t}function mt(t,e=!1,i=0){const n=this._$AH,s=this._$AN;if(void 0!==s&&0!==s.size)if(e)if(Array.isArray(n))for(let t=i;t<n.length;t++)lt(n[t],!1),ct(n[t]);else null!=n&&(lt(n,!1),ct(n));else lt(this,t)}const ht=t=>{var e,i,n,s;2==t.type&&(null!==(e=(n=t)._$AP)&&void 0!==e||(n._$AP=mt),null!==(i=(s=t)._$AQ)&&void 0!==i||(s._$AQ=pt))},ut=()=>new gt;class gt{}const ft=new WeakMap,vt=(xt=class extends class extends class{constructor(t){}get _$AU(){return this._$AM._$AU}_$AT(t,e,i){this._$Ct=t,this._$AM=e,this._$Ci=i}_$AS(t,e){return this.update(t,e)}update(t,e){return this.render(...e)}}{constructor(){super(...arguments),this._$AN=void 0}_$AT(t,e,i){super._$AT(t,e,i),dt(this),this.isConnected=t._$AU}_$AO(t,e=!0){var i,n;t!==this.isConnected&&(this.isConnected=t,t?null===(i=this.reconnected)||void 0===i||i.call(this):null===(n=this.disconnected)||void 0===n||n.call(this)),e&&(lt(this,t),ct(this))}setValue(t){if((t=>void 0===this._$Ct.strings)())this._$Ct._$AI(t,this);else{const e=[...this._$Ct._$AH];e[this._$Ci]=t,this._$Ct._$AI(e,this,0)}}disconnected(){}reconnected(){}}{render(t){return O}update(t,[e]){var i;const n=e!==this.U;return n&&void 0!==this.U&&this.ot(void 0),(n||this.rt!==this.lt)&&(this.U=e,this.ht=null===(i=t.options)||void 0===i?void 0:i.host,this.ot(this.lt=t.element)),O}ot(t){var e;if("function"==typeof this.U){const i=null!==(e=this.ht)&&void 0!==e?e:globalThis;let n=ft.get(i);void 0===n&&(n=new WeakMap,ft.set(i,n)),void 0!==n.get(this.U)&&this.U.call(this.ht,void 0),n.set(this.U,t),void 0!==t&&this.U.call(this.ht,t)}else this.U.value=t}get rt(){var t,e,i;return"function"==typeof this.U?null===(e=ft.get(null!==(t=this.ht)&&void 0!==t?t:globalThis))||void 0===e?void 0:e.get(this.U):null===(i=this.U)||void 0===i?void 0:i.value}disconnected(){this.rt===this.lt&&this.ot(void 0)}reconnected(){this.ot(this.lt)}},(...t)=>({_$litDirective$:xt,values:t})),bt=location.href.split(/#/)[0],yt=(bt.substring(0,bt.lastIndexOf("/")),"AWESOME COSME");var xt;class _t{constructor(t,e,i){this.options=Object.assign({delay:5e3,fader:500,counter:0,zoom:"data-effect",dotted:!0},i),this.stylesheet=document.styleSheets,this.useSheet=this.stylesheet[this.stylesheet.length-1],this.container=t,this.pictures=e,this.delay=this.options.delay,this.fader=this.options.fader,this.counter=this.options.counter,this.dotted=this.options.dotted,this.zoom=this.options.zoom,this._init()}_init(){if(!this.container)return!1;this._process()}_process(){if(this.pictures[0].dataset.slideActive="true",this.pictures.length<2)return console.warn("スライド画像を2枚以上用意して設定してください。");setInterval((()=>{if(this.counter<this.pictures.length-1){let t=this.pictures[this.counter],e=this.pictures[++this.counter];"zoom"===this.container.getAttribute(this.zoom)?this._zoomAnimation(t,e):this._internalAttribute(t,e)}else{let t=this.pictures[this.counter],e=this.pictures[this.counter=0];"zoom"===this.container.getAttribute(this.zoom)?this._zoomAnimation(t,e):this._internalAttribute(t,e)}}),this.delay)}_internalAttribute(t,e){t.dataset.slideActive="false",e.dataset.slideActive="true"}_zoomAnimation(t,e){t.dataset.slideActive="false",e.dataset.slideActive="true",e.dataset.zoomResolve="true",setTimeout((()=>{t.dataset.zoomResolve="false"}),this.fader)}_transparent(t){return t.style.opacity=1}}customElements.get("section-slider-component")||customElements.define("section-slider-component",class extends et{static get styles(){return[st,r`
             .fragment--topMainvisual {
                 display: block;
                 height: 100vh;
@@ -519,7 +519,7 @@
             }
             `]}PictureList=ut();PictureItem=ut();firstUpdated(){const t=this.PictureList.value,e=t.querySelectorAll(".fragment--topMainvisual-Picture_List-Item");new _t(t,e)}_messageArea(){return j`
         <div class="fragment--topMainvisual-TitleArea">
-            <h2 class="fragment--topMainvisual-Title">${bt}</h2>
+            <h2 class="fragment--topMainvisual-Title">${yt}</h2>
             <p class="fragment--topMainvisual-Presentation">
                 今を生きる現代女性へ向けて誕生した「AWESOME COSME」。 <br class="sp-br" />そのコンセプトと同じように、しなやかさと輝きを放つ、魅力的な女性たちのキレイの秘密に迫る。
             </p>
@@ -661,7 +661,7 @@
 .c-headline-number\:index:before {
     content: counter(num,decimal-leading-zero);
 }
-`,Lt=r`
+`,Ct=r`
     .o-Typography-Landing {
         line-height: 2;
         letter-spacing: 0.05em;
@@ -718,7 +718,7 @@
 .component-scope-modal-content>:not(img, video),.component-scope-modal-footer{margin-top:.8rem}
 .component-scope-modal-fotter-button{font-weight:700}
 .component-scope-modal-inner img, .component-scope-modal-inner video{display:block;height:100%;-o-object-fit:cover;object-fit:cover;width:100%}
-`,Ct=r`
+`,Lt=r`
 /*=============================================
     Loop Slider
 =============================================*/
@@ -1048,7 +1048,7 @@
 .anim-fadein-up:nth-child(10) {
     transition-delay: 0.95s;
 }
-`;const St="section-about";customElements.get(St)||customElements.define(St,class extends et{static get styles(){return[st,Pt,kt,at,Lt,It,Ct,r`
+`;const St="section-about";customElements.get(St)||customElements.define(St,class extends et{static get styles(){return[st,Pt,kt,at,Ct,It,Lt,r`
             .fragment--CompanyFutures {
                 position: relative;
             }
@@ -1140,7 +1140,7 @@
                     display: block;
                 }
             }
-            `]}constructor(){super(),this.props={siteName:`${bt}`}}render(){return j`
+            `]}constructor(){super(),this.props={siteName:`${yt}`}}render(){return j`
         <div class="fragment--topSidebar-Impression">
             <div class="fragment--topSidebar-Impression_Brand">
                 <p class="fragment--topSidebar-Impression_Brand-Title">
@@ -1374,17 +1374,25 @@
                     </ul>
                 </div>
             </div>
-        </section>`}});const Dt="pages-error";customElements.get(Dt)||customElements.define(Dt,class extends et{static get styles(){return[st,Pt,kt,Lt,at,r``]}constructor(){super()}render(){return j`
-        <section class="pages-Singular-ComponentBlock" style="padding: clamp(100px, 6.25rem + (1vw - 4.14px) * 5.2521, 150px) 0;">
+        </section>`}});const Dt="pages-error";customElements.get(Dt)||customElements.define(Dt,class extends et{static get styles(){return[st,Pt,kt,Ct,at,r`
+            .pages-Singular-ComponentBlock {
+                padding: clamp(100px, 6.25rem + (1vw - 4.14px) * 5.2521, 150px) 0;
+            }
+
+            .c-headline-lv2 {
+                margin-top: 40px; margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);
+            }
+            `]}constructor(){super()}render(){return j`
+        <section class="pages-Singular-ComponentBlock">
             <div class="ly-Inner_Grid -lg">
                 <div class="c-headline-lv6 u-uppercase">404 Error</div>
-                <h2 class="c-headline-lv2" style="margin-top: 40px; margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);">404 Not Found</h2>
+                <h2 class="c-headline-lv2">404 Not Found</h2>
                 <div class="pages-Singular-Component_Content o-userWriting-Area">
                     <p>申し訳ございません。ページが見つかりませんでした。</p>
                 </div>
             </div>
         </section>
-        `}});const jt="section-proposal";customElements.get(jt)||customElements.define(jt,class extends et{static get styles(){return[st,Pt,kt,at,Lt,r`
+        `}});const jt="section-proposal";customElements.get(jt)||customElements.define(jt,class extends et{static get styles(){return[st,Pt,kt,at,Ct,r`
             .fragment--Products-Proposal {
                 --spY: 80px;
                 --pcY: 150px;
@@ -1501,6 +1509,14 @@
                 position: relative;
                 padding: 8%;
             }
+
+            .fragment--ReleaseInfo_Contents {
+                margin-top: 40px;
+            }
+            
+            .c-headline-lv2 {
+                margin-top: 40px;
+            }
             `]}firstUpdated(){}render(){return j`
         <section class="fragment--ReleaseInfo">
             <div class="ly-Inner_Grid -lg">
@@ -1508,8 +1524,8 @@
                     <h2 class="c-headline-lv6 u-uppercase">
                         BLOG
                     </h2>
-                    <div class="c-headline-lv2" style="margin-top: 40px;">ブログ</div>
-                    <div class="fragment--ReleaseInfo_Contents" style="margin-top: 40px;">
+                    <div class="c-headline-lv2">ブログ</div>
+                    <div class="fragment--ReleaseInfo_Contents">
                         まだ記事がありません。
                         <!-- <ul class="fragment--Carousel_List">
                             <li class="fragment--Carousel_List-Item">
@@ -1534,13 +1550,17 @@
                     </div>
                 </div>
             </div>
-        </section>`}});const Ot="section-access";customElements.get(Ot)||customElements.define(Ot,class extends et{static get styles(){return[st,Pt,kt,at,Lt,r`
+        </section>`}});const Ot="section-access";customElements.get(Ot)||customElements.define(Ot,class extends et{static get styles(){return[st,Pt,kt,at,Ct,r`
 
             .fragment--Access {
                 --spY: 80px;
                 --pcY: 150px;
                 --offsetYsp: calc(var(--spY) - (var(--spY) * 2));
                 margin-bottom: var(--offsetYsp);
+            }
+
+            .c-headline-lv6 {
+                margin-bottom: 40px;
             }
 
             .fragment--Access_FramePanel {
@@ -1656,7 +1676,7 @@
             `]}render(){return j`
         <section class="fragment--Access">
         <div class="ly-Inner_Grid -lg"> 
-            <h2 class="c-headline-lv6 u-uppercase" style="margin-bottom: 40px;">
+            <h2 class="c-headline-lv6 u-uppercase">
                 Access
             </h2>
             <div class="fragment--Access_FramePanel">
@@ -1720,7 +1740,7 @@
                 </div>
             </div>
         </div>
-    </section>`}});class Ht{constructor(t,e){this.accordionContainer=t,this.accordionTabs=this.accordionContainer.querySelectorAll(`.${e}`),this.accordionAddCls="is-open-panel",this.touchEventListener=this.touchEventDetection(),this.multiSelectDefault=!0,this.init()}init(){this.accordionContainer&&this._accordion_trigger()}_accordion_trigger(){this.accordionTabs.forEach((t=>{t.addEventListener(this.touchEventListener,(e=>{e.preventDefault(),t.classList.toggle(this.accordionAddCls);const i=t.nextElementSibling;t.classList.contains(this.accordionAddCls)?i.style.maxHeight=i.scrollHeight+"px":i.style.maxHeight=0}),{passive:!1})}))}_multiSelectable(t){if(1==this.multiSelectDefault){const e=this.accordionContainer.querySelector(".js-accordion-header.is-open-panel");e&&e!==t&&(e.classList.remove(this.accordionAddCls),e.nextElementSibling.style.maxHeight=0)}}touchEventDetection(){return window.ontouchstart?"touchstart":"click"}}const Ut="section-faq";customElements.get(Ut)||customElements.define(Ut,class extends et{static get styles(){return[st,at,Pt,kt,Lt,r`
+    </section>`}});class Ht{constructor(t,e){this.accordionContainer=t,this.accordionTabs=this.accordionContainer.querySelectorAll(`.${e}`),this.accordionAddCls="is-open-panel",this.touchEventListener=this.touchEventDetection(),this.multiSelectDefault=!0,this.init()}init(){this.accordionContainer&&this._accordion_trigger()}_accordion_trigger(){this.accordionTabs.forEach((t=>{t.addEventListener(this.touchEventListener,(e=>{e.preventDefault(),t.classList.toggle(this.accordionAddCls);const i=t.nextElementSibling;t.classList.contains(this.accordionAddCls)?i.style.maxHeight=i.scrollHeight+"px":i.style.maxHeight=0}),{passive:!1})}))}_multiSelectable(t){if(1==this.multiSelectDefault){const e=this.accordionContainer.querySelector(".js-accordion-header.is-open-panel");e&&e!==t&&(e.classList.remove(this.accordionAddCls),e.nextElementSibling.style.maxHeight=0)}}touchEventDetection(){return window.ontouchstart?"touchstart":"click"}}const Bt="section-faq";customElements.get(Bt)||customElements.define(Bt,class extends et{static get styles(){return[st,at,Pt,kt,Ct,r`
             .fragment--accordions {
                 display: grid;
                 grid-template-columns: minmax(20px, 1fr) auto;
@@ -1729,8 +1749,19 @@
                 grid-row-gap: 0px;
             }
 
+            .c-headline-lv6 {
+                margin-bottom: 40px;
+            }
+
             .c-accordion-container {
                 grid-area: 1 / 2 / 2 / 3;
+            }
+            
+            .c-accordion-panel {
+                overflow: hidden;
+                box-sizing: border-box;
+                max-height: 0px;
+                transition: max-height 0.3s ease-out 0s;
             }
 
             .c-accordion-item {
@@ -1803,7 +1834,7 @@
             `]}constructor(){super(),this.accordions=[{id:"faq-1",title:"化粧品の使用期限はどの位ですか？",description:"大まかな使用期限 化粧品の使用期限は一般的に、未開封で3年、開封済で半年から1年といわれています。"},{id:"faq-2",title:"化粧品の使用期限はどの位ですか？",description:"大まかな使用期限 化粧品の使用期限は一般的に、未開封で3年、開封済で半年から1年といわれています。"},{id:"faq-3",title:"化粧品の使用期限はどの位ですか？",description:"大まかな使用期限 化粧品の使用期限は一般的に、未開封で3年、開封済で半年から1年といわれています。"},{id:"faq-4",title:"化粧品の使用期限はどの位ですか？",description:"大まかな使用期限 化粧品の使用期限は一般的に、未開封で3年、開封済で半年から1年といわれています。"},{id:"faq-5",title:"化粧品の使用期限はどの位ですか？",description:"大まかな使用期限 化粧品の使用期限は一般的に、未開封で3年、開封済で半年から1年といわれています。"},{id:"faq-6",title:"化粧品の使用期限はどの位ですか？",description:"大まかな使用期限 化粧品の使用期限は一般的に、未開封で3年、開封済で半年から1年といわれています。"}]}accordion=ut();firstUpdated(){const t=this.accordion.value;new Ht(t,"js-accordion-header")}render(){return j`
         <section class="fragment--Faq">
             <div class="ly-Inner_Grid -lg">
-                <h2 class="c-headline-lv6 u-uppercase" style="margin-bottom: 40px;">
+                <h2 class="c-headline-lv6 u-uppercase">
                     Faq
                 </h2>
                 <div class="fragment--accordions">
@@ -1816,7 +1847,7 @@
                                     <span class="c-accordion-tabicon"></span>
                                 </button>
                             </h2>
-                            <div class="c-accordion-panel js-accordion-panel" style="overflow: hidden; box-sizing: border-box; max-height: 0px; transition: max-height 0.3s ease-out 0s;">
+                            <div class="c-accordion-panel js-accordion-panel">
                                 <div class="c-accordion-content">
                                     <p>${i}</p>
                                 </div>
@@ -1827,22 +1858,37 @@
                 </div>
             </div>
         </section>
-        `}});const Bt="pages-company";customElements.get(Bt)||customElements.define(Bt,class extends et{static get styles(){return[st,Pt,kt,Lt,at,r``]}constructor(){super()}render(){return j`
-        <section class="pages-Singular-ComponentBlock" style="padding: clamp(100px, 6.25rem + (1vw - 4.14px) * 5.2521, 150px) 0;">
+        `}});const Ut="pages-company";customElements.get(Ut)||customElements.define(Ut,class extends et{static get styles(){return[st,Pt,kt,Ct,at,r`
+            .pages-Singular-ComponentBlock {
+                padding: clamp(100px, 6.25rem + (1vw - 4.14px) * 5.2521, 150px) 0;
+            }
+            
+            .c-headline-lv2 {
+                margin-top: 40px; margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);
+            }
+            `]}constructor(){super()}render(){return j`
+        <section class="pages-Singular-ComponentBlock">
             <div class="ly-Inner_Grid -lg">
                 <div class="c-headline-lv6 u-uppercase">Company</div>
-                <h2 class="c-headline-lv2" style="margin-top: 40px; margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);">企業情報</h2>
+                <h2 class="c-headline-lv2">企業情報</h2>
                 <div class="pages-Singular-Component_Content o-userWriting-Area">
                     <p>現在調整中のページです。</p>
                 </div>
             </div>
         </section>
-        `}});const Ft="pages-policy";customElements.get(Ft)||customElements.define(Ft,class extends et{static get styles(){return[st,Pt,kt,Lt,at,r`
+        `}});const Ft="pages-policy";customElements.get(Ft)||customElements.define(Ft,class extends et{static get styles(){return[st,Pt,kt,Ct,at,r`
+            .pages-Singular-ComponentBlock {
+                padding: clamp(100px, 6.25rem + (1vw - 4.14px) * 5.2521, 150px) 0;
+            }
+
+            .c-headline-lv2 {
+                margin-top: 40px; margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);
+            }
             `]}render(){return j`
-            <section class="pages-Singular-ComponentBlock" style="padding: clamp(100px, 6.25rem + (1vw - 4.14px) * 5.2521, 150px) 0;">
+            <section class="pages-Singular-ComponentBlock">
                 <div class="ly-Inner_Grid -lg">
                     <div class="c-headline-lv6 u-uppercase">Privacy Policy</div>
-                    <h2 class="c-headline-lv2" style="margin-top: 40px; margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);">プライバシーポリシー</h2>
+                    <h2 class="c-headline-lv2">プライバシーポリシー</h2>
                     <div class="pages-Singular-Component_Content o-userWriting-Area">
                         <h3>1.個人情報の定義</h3>
                         <p>「個人情報」とは、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日その他の記述等により特定の個人を識別することができるもの、及び他の情報と容易に照合することができ、それにより特定の個人を識別することができることとなるものをいいます。</p>
@@ -1884,13 +1930,20 @@
                     </div>
                 </div>
             </section>
-        `}});const qt="pages-terms";customElements.get(qt)||customElements.define(qt,class extends et{static get styles(){return[st,Pt,kt,Lt,at,r``]}constructor(){super()}render(){return j`
-         <section class="pages-Singular-ComponentBlock" style="padding: clamp(100px, 6.25rem + (1vw - 4.14px) * 5.2521, 150px) 0;">
+        `}});const Rt="pages-terms";customElements.get(Rt)||customElements.define(Rt,class extends et{static get styles(){return[st,Pt,kt,Ct,at,r`
+            .pages-Singular-ComponentBlock {
+                padding: clamp(100px, 6.25rem + (1vw - 4.14px) * 5.2521, 150px) 0;
+            }
+            .c-headline-lv2 {
+                margin-top: 40px; 
+                margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);
+            }`]}constructor(){super()}render(){return j`
+         <section class="pages-Singular-ComponentBlock">
                 <div class="ly-Inner_Grid -lg">
                     <div class="c-headline-lv6 u-uppercase">Terms</div>
-                    <h2 class="c-headline-lv2" style="margin-top: 40px; margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);">利用規約</h2>
+                    <h2 class="c-headline-lv2">利用規約</h2>
                     <div class="pages-Singular-Component_Content o-userWriting-Area">
-                        <p>この利用規約（以下、「本規約」といいます。）は、＿＿＿＿＿（以下、「当社」といいます。）がこのウェブサイト上で提供するサービス（以下、「本サービス」といいます。）の利用条件を定めるものです。登録ユーザーの皆さま（以下、「ユーザー」といいます。）には、本規約に従って、本サービスをご利用いただきます。</p>
+                        <p>この利用規約（以下、「本規約」といいます。）は、${yt}（以下、「当社」といいます。）がこのウェブサイト上で提供するサービス（以下、「本サービス」といいます。）の利用条件を定めるものです。登録ユーザーの皆さま（以下、「ユーザー」といいます。）には、本規約に従って、本サービスをご利用いただきます。</p>
                         <h3>第1条（適用）</h3>
                         <p>本規約は、ユーザーと当社との間の本サービスの利用に関わる一切の関係に適用されるものとします。当社は本サービスに関し、本規約のほか、ご利用にあたってのルール等、各種の定め（以下、「個別規定」といいます。）をすることがあります。これら個別規定はその名称のいかんに関わらず、本規約の一部を構成するものとします。本規約の規定が前条の個別規定の規定と矛盾する場合には、個別規定において特段の定めなき限り、個別規定の規定が優先されるものとします。</p>
                         <h3>第2条（利用登録）</h3>
@@ -1962,14 +2015,22 @@
                     </div>
                 </div>
             </section>
-        `}});const Rt="pages-commerce";customElements.get(Rt)||customElements.define(Rt,class extends et{static get styles(){return[st,Pt,kt,Lt,at,r``]}constructor(){super()}render(){return j`
-        <section class="pages-Singular-ComponentBlock" style="padding: clamp(100px, 6.25rem + (1vw - 4.14px) * 5.2521, 150px) 0;">
+        `}});const qt="pages-commerce";customElements.get(qt)||customElements.define(qt,class extends et{static get styles(){return[st,Pt,kt,Ct,at,r`
+            .pages-Singular-ComponentBlock {
+                padding: clamp(100px, 6.25rem + (1vw - 4.14px) * 5.2521, 150px) 0;
+            }
+            
+            .c-headline-lv2 {
+                margin-top: 40px; 
+                margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);
+            }`]}constructor(){super()}render(){return j`
+        <section class="pages-Singular-ComponentBlock">
             <div class="ly-Inner_Grid -lg">
                 <div class="c-headline-lv6 u-uppercase">Commerce</div>
-                <h2 class="c-headline-lv2" style="margin-top: 40px; margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);">特定商取引法に基づく表記</h2>
+                <h2 class="c-headline-lv2">特定商取引法に基づく表記</h2>
                 <div class="pages-Singular-Component_Content o-userWriting-Area">
                     <h3>店舗名</h3>
-                    <p>AWESOME COSME</p>
+                    <p>${yt}</p>
                     <h3>所在地</h3>
                     <p>〒150-0002 東京都渋谷区渋谷3丁目21-12</p>
                     <h3>電話番号</h3>
@@ -1982,30 +2043,36 @@
                         <li>代金引換決済</li>
                     </ol>
                     <h3>商品代金以外の必要金額</h3>
-                    <p>代金引換決済の場合、代金引換手数料<br />代金引換手数料：１万円未満●円　３万円未満●円　３万円以上●円　１０万円以上３０万円まで●円です。送料：本州●円　四国・九州・北海道：●円　沖縄：●円離島料金は掛かりません。</p>
+                    <p>代金引換決済の場合、代金引換手数料<br />代金引換手数料：１万円未満○円　３万円未満○円　３万円以上○円　１０万円以上３０万円まで○円です。送料：本州○円　四国・九州・北海道：○円　沖縄：○円離島料金は掛かりません。</p>
                     <h3>販売数量</h3>
                     <p>1点〜</p>
                     <h3>商品引渡し時期</h3>
-                    <p>前払いの場合、指定日が無ければ入金確認後●営業日以内で発送致します。代引の場合、指定日が無ければご注文確認後●日営業日以内で発送致します。その他の支払方法の場合、指定日が無ければご注文後●日営業日以内で発送致します。後払いの場合、商品到着後●日以内にご入金ください。</p>
+                    <p>前払いの場合、指定日が無ければ入金確認後○営業日以内で発送致します。代引の場合、指定日が無ければご注文確認後○日営業日以内で発送致します。その他の支払方法の場合、指定日が無ければご注文後○日営業日以内で発送致します。後払いの場合、商品到着後○日以内にご入金ください。</p>
                     <h3>商品引渡し方法</h3>
                     <p>当方にて手配後、運送会社による配送</p>
                     <h3>返品・不良品について</h3>
                     <p>「不良品・当社の商品の間違い」の場合は当社が負担いたします。配送途中の破損などの事故がございましたら、弊社までご連絡下さい。送料・手数料ともに弊社負担で早急に新品をご送付致します。</p>
                     <ol>
                         <li>【返品対象】「不良品・当社の商品の間違い」の場合</li>
-                        <li>【返品時期】ご購入後●日以内にご連絡があった場合に返金可能となります。</li>
-                        <li>【返品方法】メールにて返金要請してください。●日以内にご購入代金を指定の口座へお振込みいたします。</li>
+                        <li>【返品時期】ご購入後○日以内にご連絡があった場合に返金可能となります。</li>
+                        <li>【返品方法】メールにて返金要請してください。○日以内にご購入代金を指定の口座へお振込みいたします。</li>
                     </ol>
                     <h3>表現、及び商品に関する注意書き</h3>
                     <p>本商品に示された表現や再現性には個人差があり、必ずしも利益や効果を保証したものではございません。</p>
                 </div>
             </div>
         </section>
-        `}});const Nt="pages-contact";customElements.get(Nt)||customElements.define(Nt,class extends et{static get styles(){return[st,Pt,kt,Lt,at,r``]}constructor(){super()}render(){return j`
-        <section class="pages-Singular-ComponentBlock" style="padding: clamp(100px, 6.25rem + (1vw - 4.14px) * 5.2521, 150px) 0;">
+        `}});const Nt="pages-contact";customElements.get(Nt)||customElements.define(Nt,class extends et{static get styles(){return[st,Pt,kt,Ct,at,r`
+            .pages-Singular-ComponentBlock {
+                padding: clamp(100px, 6.25rem + (1vw - 4.14px) * 5.2521, 150px) 0;
+            }
+            .c-headline-lv2 {
+                margin-top: 40px; margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);
+            }`]}constructor(){super()}render(){return j`
+        <section class="pages-Singular-ComponentBlock">
             <div class="ly-Inner_Grid -lg">
                 <div class="c-headline-lv6 u-uppercase">Contact</div>
-                <h2 class="c-headline-lv2" style="margin-top: 40px; margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);">お問い合わせ</h2>
+                <h2 class="c-headline-lv2">お問い合わせ</h2>
                 <div class="pages-Singular-Component_Content o-userWriting-Area">
                     <p>現在調整中のページです。</p>
                 </div>
@@ -2248,6 +2315,10 @@
                 white-space: nowrap
             }
 
+            .s-Header_Brand-Title {
+                display: block;
+            }
+
             @media screen and (min-width:768px) {
                 .s-Header_Inner {
                     align-items: flex-start;
@@ -2255,12 +2326,12 @@
                     height: var(--private-header-height-pc);
                     padding: 45px 23px
                 }
-            }`]}constructor(){super(),this.props={siteName:`${bt}`}}headerRef=ut();drawerRef=ut();_onClick(t){t.preventDefault(),document.getElementById("app").innerHTML='\n            <section-sidebar></section-sidebar>\n            <section-slider-component></section-slider-component>\n            <gl-wrapper>\n                <section-about id="index_id01"></section-about>\n                <section-products id="index_id02"></section-products>\n                <section-proposal></section-proposal>\n                <section-release-info id="index_id03"></section-release-info>\n                <section-access id="index_id04"></section-access>\n                <section-faq id="index_id05"></section-faq>\n            </gl-wrapper>',history.pushState(null,null,t.target.href)}_callback(){return this.headerRef.value.addEventListener("click",(t=>this._onClick(t)))}render(){return j`
+            }`]}constructor(){super(),this.props={siteName:`${yt}`}}headerRef=ut();drawerRef=ut();_onClick(t){t.preventDefault(),document.getElementById("app").innerHTML='\n            <section-sidebar></section-sidebar>\n            <section-slider-component></section-slider-component>\n            <gl-wrapper>\n                <section-about id="index_id01"></section-about>\n                <section-products id="index_id02"></section-products>\n                <section-proposal></section-proposal>\n                <section-release-info id="index_id03"></section-release-info>\n                <section-access id="index_id04"></section-access>\n                <section-faq id="index_id05"></section-faq>\n            </gl-wrapper>',history.pushState(null,null,t.target.href)}_callback(){return this.headerRef.value.addEventListener("click",(t=>this._onClick(t)))}render(){return j`
         <header class="s-Header" role="banner">
             <div class="s-Header_Inner">
                 <h1 class="s-Header_Brand">
                     <div class="s-Header_Brand-Title">
-                        <a href="/" style="display: block;" ${vt(this.headerRef)} @click="${this._callback}">
+                        <a href="/" ${vt(this.headerRef)} @click="${this._callback}">
                             ${this.props.siteName}
                         </a>
                     </div>
@@ -2271,6 +2342,14 @@
             .s-Footer {
                 width: 100%;
                 position: relative;
+            }
+
+            .s-Footer_Image {
+                grid-column: 1/4;
+            }
+
+            .s-Footer_Image img {
+                width: 100%;
             }
 
             .s-Footer_Contents-Render {
@@ -2320,15 +2399,15 @@
                 color: var(--color-text-third);
                 font-size: 12px;
                 margin-top: clamp(20px, 4.8vw, 52px);
-            }`]}constructor(){super(),this.props={siteName:`${bt}`}}navFooter=ut();navLinks=ut();firstUpdated(){const t=this.navFooter.value;new Gt(t,"[data-content-anchor]")}render(){return j`
+            }`]}constructor(){super(),this.props={siteName:`${yt}`}}navFooter=ut();navLinks=ut();firstUpdated(){const t=this.navFooter.value;new Gt(t,"[data-content-anchor]")}render(){return j`
         <footer class="s-Footer" role="contentinfo">
             <div class="ly-Inner_Grid">
-                <div class="s-Footer_Image" style="grid-column: 1/4;">
+                <div class="s-Footer_Image">
                     <picture>
                         <source media="(min-width: 992px)" srcset="../images/footer-pc@1x.jpg" type="image/jpg">
                         <source media="(min-width: 1200px)" srcset="../images/footer-pc@2x.jpg" type="image/jpg">
                         <source srcset="./images/footer-sp@2x.jpg" type="image/jpg">
-                        <img src="../images/footer-sp@1x.jpg" alt="AWESOME COSME プロダクト画像" style="width: 100%;">
+                        <img src="../images/footer-sp@1x.jpg" alt="AWESOME COSME プロダクト画像">
                     </picture>
                 </div>
                 <div class="s-Footer_Contents-Render">

@@ -16,7 +16,13 @@ export class Contact extends LitElement {
             headline,
             typography,
             utils,
-            css``
+            css`
+            .pages-Singular-ComponentBlock {
+                padding: clamp(100px, 6.25rem + (1vw - 4.14px) * 5.2521, 150px) 0;
+            }
+            .c-headline-lv2 {
+                margin-top: 40px; margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);
+            }`
         ]
     }
 
@@ -26,10 +32,10 @@ export class Contact extends LitElement {
 
     render() {
         return html`
-        <section class="pages-Singular-ComponentBlock" style="padding: clamp(100px, 6.25rem + (1vw - 4.14px) * 5.2521, 150px) 0;">
+        <section class="pages-Singular-ComponentBlock">
             <div class="ly-Inner_Grid -lg">
                 <div class="c-headline-lv6 u-uppercase">Contact</div>
-                <h2 class="c-headline-lv2" style="margin-top: 40px; margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);">お問い合わせ</h2>
+                <h2 class="c-headline-lv2">お問い合わせ</h2>
                 <div class="pages-Singular-Component_Content o-userWriting-Area">
                     <p>現在調整中のページです。</p>
                 </div>

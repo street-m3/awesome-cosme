@@ -17,7 +17,15 @@ export class Error extends LitElement {
             headline,
             typography,
             utils,
-            css``
+            css`
+            .pages-Singular-ComponentBlock {
+                padding: clamp(100px, 6.25rem + (1vw - 4.14px) * 5.2521, 150px) 0;
+            }
+
+            .c-headline-lv2 {
+                margin-top: 40px; margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);
+            }
+            `
         ]
     }
 
@@ -27,10 +35,10 @@ export class Error extends LitElement {
 
     render() {
         return html`
-        <section class="pages-Singular-ComponentBlock" style="padding: clamp(100px, 6.25rem + (1vw - 4.14px) * 5.2521, 150px) 0;">
+        <section class="pages-Singular-ComponentBlock">
             <div class="ly-Inner_Grid -lg">
                 <div class="c-headline-lv6 u-uppercase">404 Error</div>
-                <h2 class="c-headline-lv2" style="margin-top: 40px; margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);">404 Not Found</h2>
+                <h2 class="c-headline-lv2">404 Not Found</h2>
                 <div class="pages-Singular-Component_Content o-userWriting-Area">
                     <p>申し訳ございません。ページが見つかりませんでした。</p>
                 </div>

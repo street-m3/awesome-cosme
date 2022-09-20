@@ -16,16 +16,23 @@ export class Policy extends LitElement {
             typography,
             utils,
             css`
+            .pages-Singular-ComponentBlock {
+                padding: clamp(100px, 6.25rem + (1vw - 4.14px) * 5.2521, 150px) 0;
+            }
+
+            .c-headline-lv2 {
+                margin-top: 40px; margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);
+            }
             `
         ]
     }
 
     render() {
         return html`
-            <section class="pages-Singular-ComponentBlock" style="padding: clamp(100px, 6.25rem + (1vw - 4.14px) * 5.2521, 150px) 0;">
+            <section class="pages-Singular-ComponentBlock">
                 <div class="ly-Inner_Grid -lg">
                     <div class="c-headline-lv6 u-uppercase">Privacy Policy</div>
-                    <h2 class="c-headline-lv2" style="margin-top: 40px; margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);">プライバシーポリシー</h2>
+                    <h2 class="c-headline-lv2">プライバシーポリシー</h2>
                     <div class="pages-Singular-Component_Content o-userWriting-Area">
                         <h3>1.個人情報の定義</h3>
                         <p>「個人情報」とは、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日その他の記述等により特定の個人を識別することができるもの、及び他の情報と容易に照合することができ、それにより特定の個人を識別することができることとなるものをいいます。</p>

@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit';
+import { presets } from '../env/env';
 import reset from '../styles/reset';
 import container from '../styles/container';
 import headline from '../styles/headline';
@@ -15,7 +16,14 @@ export class Terms extends LitElement {
             headline,
             typography,
             utils,
-            css``
+            css`
+            .pages-Singular-ComponentBlock {
+                padding: clamp(100px, 6.25rem + (1vw - 4.14px) * 5.2521, 150px) 0;
+            }
+            .c-headline-lv2 {
+                margin-top: 40px; 
+                margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);
+            }`
         ]
     }
 
@@ -25,12 +33,12 @@ export class Terms extends LitElement {
 
     render() {
         return html`
-         <section class="pages-Singular-ComponentBlock" style="padding: clamp(100px, 6.25rem + (1vw - 4.14px) * 5.2521, 150px) 0;">
+         <section class="pages-Singular-ComponentBlock">
                 <div class="ly-Inner_Grid -lg">
                     <div class="c-headline-lv6 u-uppercase">Terms</div>
-                    <h2 class="c-headline-lv2" style="margin-top: 40px; margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 4.14px) * 5.2521)), 150px);">利用規約</h2>
+                    <h2 class="c-headline-lv2">利用規約</h2>
                     <div class="pages-Singular-Component_Content o-userWriting-Area">
-                        <p>この利用規約（以下、「本規約」といいます。）は、＿＿＿＿＿（以下、「当社」といいます。）がこのウェブサイト上で提供するサービス（以下、「本サービス」といいます。）の利用条件を定めるものです。登録ユーザーの皆さま（以下、「ユーザー」といいます。）には、本規約に従って、本サービスをご利用いただきます。</p>
+                        <p>この利用規約（以下、「本規約」といいます。）は、${presets.siteName}（以下、「当社」といいます。）がこのウェブサイト上で提供するサービス（以下、「本サービス」といいます。）の利用条件を定めるものです。登録ユーザーの皆さま（以下、「ユーザー」といいます。）には、本規約に従って、本サービスをご利用いただきます。</p>
                         <h3>第1条（適用）</h3>
                         <p>本規約は、ユーザーと当社との間の本サービスの利用に関わる一切の関係に適用されるものとします。当社は本サービスに関し、本規約のほか、ご利用にあたってのルール等、各種の定め（以下、「個別規定」といいます。）をすることがあります。これら個別規定はその名称のいかんに関わらず、本規約の一部を構成するものとします。本規約の規定が前条の個別規定の規定と矛盾する場合には、個別規定において特段の定めなき限り、個別規定の規定が優先されるものとします。</p>
                         <h3>第2条（利用登録）</h3>

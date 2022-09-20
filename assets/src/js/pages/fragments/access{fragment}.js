@@ -25,6 +25,10 @@ export class Access extends LitElement {
                 margin-bottom: var(--offsetYsp);
             }
 
+            .c-headline-lv6 {
+                margin-bottom: 40px;
+            }
+
             .fragment--Access_FramePanel {
                 grid-column: 1/4;
                 z-index: 0;
@@ -143,7 +147,7 @@ export class Access extends LitElement {
         return html`
         <section class="fragment--Access">
         <div class="ly-Inner_Grid -lg"> 
-            <h2 class="c-headline-lv6 u-uppercase" style="margin-bottom: 40px;">
+            <h2 class="c-headline-lv6 u-uppercase">
                 Access
             </h2>
             <div class="fragment--Access_FramePanel">

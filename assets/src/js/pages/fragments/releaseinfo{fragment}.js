@@ -21,6 +21,14 @@ export class ReleaseInfo extends LitElement {
                 position: relative;
                 padding: 8%;
             }
+
+            .fragment--ReleaseInfo_Contents {
+                margin-top: 40px;
+            }
+            
+            .c-headline-lv2 {
+                margin-top: 40px;
+            }
             `
         ]
     }
@@ -37,8 +45,8 @@ export class ReleaseInfo extends LitElement {
                     <h2 class="c-headline-lv6 u-uppercase">
                         BLOG
                     </h2>
-                    <div class="c-headline-lv2" style="margin-top: 40px;">ブログ</div>
-                    <div class="fragment--ReleaseInfo_Contents" style="margin-top: 40px;">
+                    <div class="c-headline-lv2">ブログ</div>
+                    <div class="fragment--ReleaseInfo_Contents">
                         まだ記事がありません。
                         <!-- <ul class="fragment--Carousel_List">
                             <li class="fragment--Carousel_List-Item">
