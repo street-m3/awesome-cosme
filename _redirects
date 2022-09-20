@@ -1,2 +1,7 @@
-/*    /index.html   200
-/*/*  /             404
+/*         /index.html   200
+/company   /             301
+/policy    /             301
+/terms     /             301
+/commerce  /             301
+/contact   /             301
+/404       /             301
