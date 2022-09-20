@@ -138,7 +138,7 @@ export class Footer extends LitElement {
                             </li>
                         </ul>
                     </nav>
-                    <small class="s-Footer_copyright" translate="no">© THREE 2021 ALL Rights Reserved.</small>
+                    <small class="s-Footer_copyright" translate="no">© THREE ${new Date().getFullYear()} ALL Rights Reserved.</small>
                 </div>
             </div>
         </footer>`;
