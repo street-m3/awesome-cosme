@@ -157,6 +157,7 @@ Thumbs.db
 *.flv
 *.mov
 *.wmv
+*.mp4
 
 #Project Test files
 doc
