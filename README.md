@@ -1,7 +1,6 @@
-<a href="https://magical-kleicha-1ee4d8.netlify.app/" title="AWESOME COSME ホームページ"><img src="https://magical-kleicha-1ee4d8.netlify.app/images/logo.svg" alt="AWESOME COSME" align="center"></a>
+<h1><a href="https://magical-kleicha-1ee4d8.netlify.app/" title="AWESOME COSME ホームページ" style="display: inline-flex; justify-content: center;  align-items: center; padding: 2rem 0;"><img src="https://magical-kleicha-1ee4d8.netlify.app/images/logo.svg" alt="AWESOME COSME"></a></h1>
 
 
-## AWESOME COSME
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ffa5799e-58b7-460c-92cf-ca0a09ec86b5/deploy-status)](https://app.netlify.com/sites/magical-kleicha-1ee4d8/deploys)
 <img src="https://img.shields.io/github/languages/code-size/street-m3/awesome-cosme">
 
