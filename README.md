@@ -11,10 +11,7 @@
 
 URL: [AWESOME COSME オフィシャルサイト](https://magical-kleicha-1ee4d8.netlify.app/)
 ## Stack
-<img src="https://img.shields.io/badge/-HTML-f2f2f2.svg?logo=html5&style=popout">
-<img src="https://img.shields.io/badge/-PostCSS-dd3a0a.svg?logo=PostCSS&style=popout">
-<img src="https://img.shields.io/badge/-Lit-5865f2.svg?logo=lit&style=popout">
-<img src="https://img.shields.io/badge/-Webcomponents.org-f2f2f2.svg?logo=Webcomponents.org&style=popout">
+<img src="https://img.shields.io/badge/-HTML-f2f2f2.svg?logo=html5&style=popout"><img src="https://img.shields.io/badge/-PostCSS-dd3a0a.svg?logo=PostCSS&style=popout"><img src="https://img.shields.io/badge/-Lit-5865f2.svg?logo=lit&style=popout"><img src="https://img.shields.io/badge/-Webcomponents.org-f2f2f2.svg?logo=Webcomponents.org&style=popout">
 
 ## 概要
 このポートフォリオサイトでは、下層ページのデザインカンプは存在しなかったため、トップページだけの静的サイトの構築をする予定でした。ですが、1ページならではのサイトが作れないかと考え、シングルページアプリケーションの作成に取り組もうと思いました。
